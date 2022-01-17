@@ -1,4 +1,4 @@
-import { imgBase } from "../utils/requests";
+import { imgBase } from "../utils/urls";
 import Header from "./Header";
 import Moment from "react-moment";
 import { AiFillStar } from "react-icons/ai";
@@ -28,7 +28,7 @@ const CarouselThumb = ({
   return (
     <div
       style={style}
-      className="w-full bg-cover bg-center bg-no-repeat h-auto"
+      className="w-full bg-cover bg-center bg-no-repeat min-h-screen h-auto"
     >
       <Header />
       <div className="container pt-24 pb-20 relative flex justify-center items-center">

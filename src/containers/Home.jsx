@@ -1,10 +1,13 @@
+import { Fragment } from "react";
 import Carousel from "../components/Carousel";
+import Nav from "../components/Nav";
 
 const Home = () => {
   return (
-    <div>
+    <Fragment>
       <Carousel />
-    </div>
+      <Nav />
+    </Fragment>
   );
 };
 

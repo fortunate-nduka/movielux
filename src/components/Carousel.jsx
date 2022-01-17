@@ -1,6 +1,6 @@
 import { useState, useEffect} from "react";
 import axios from "axios";
-import { trendingUrl } from "../utils/requests";
+import { trendingUrl } from "../utils/urls";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
