@@ -1,13 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import axios from "axios";
 import { trendingUrl } from "../utils/requests";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CarouselThumb from "./CarouselThumb";
-// import { Link } from "react-router-dom";
-// import { BiSearch } from "react-icons/bi";
-// import { AiFillStar } from "react-icons/ai";
 
 const Carousel = () => {
   const [trends, setTrends] = useState([]);
@@ -23,11 +20,18 @@ const Carousel = () => {
     };
     fetchMovies();
   }, []);
+  const carouselRef = useRef();
 
   return (
-    <Slider adaptiveHeight={true} fade={true} arrows={false} autoplay={true} autoplaySpeed={4000}>
+    <Slider
+      adaptiveHeight={true}
+      fade={true}
+      arrows={false}
+      autoplay={true}
+      autoplaySpeed={4000}
+    >
       {trends.map((trend) => (
-        <CarouselThumb key={trend.id} {...trend} />
+        <CarouselThumb key={trend.id} {...trend}/>
       ))}
     </Slider>
   );

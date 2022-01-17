@@ -4,7 +4,8 @@ import Moment from "react-moment";
 import { AiFillStar } from "react-icons/ai";
 import { FaThumbsUp } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
-import { ImVideoCamera } from "react-icons/im";
+import { BsArrowLeft } from "react-icons/bs";
+// import { ImVideoCamera } from "react-icons/im";
 
 const CarouselThumb = ({
   title,
@@ -16,7 +17,7 @@ const CarouselThumb = ({
   vote_count,
   first_air_date,
   overview,
-}) => {
+})=> {
   const style = {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(${
       imgBase + backdrop_path
@@ -24,14 +25,21 @@ const CarouselThumb = ({
   };
 
   const dateToFormat = release_date || first_air_date;
-
   return (
     <div
       style={style}
       className="w-full bg-cover bg-center bg-no-repeat h-auto"
     >
       <Header />
-      <div className="container py-14">
+      <div className="container py-14 relative">
+        <div className="absolute right-3 top-5">
+          <button className="border border-white rounded-full p-2 mr-3">
+            <BsArrowLeft fontSize={15} />
+          </button>
+          <button className="border border-white rounded-full p-2">
+            <BsArrowRight fontSize={15} />
+          </button>
+        </div>
         <div className="px-4 mb-10">
           <Moment date={dateToFormat} fromNow className="text-gray-300" />
           <div className="text-4xl font-bold mt-4">{title || name}</div>
@@ -50,14 +58,17 @@ const CarouselThumb = ({
               ? `${overview.substring(0, 300)}...`
               : overview}
           </div>
-          <div className="mt-10 flex font-inter flex-col md:flex-row w-max">
+          <button className="mt-10 tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center md:mr-6 cursor-pointer">
+            More Information <BsArrowRight className="ml-2 text-sm" />
+          </button>
+          {/* <div className="mt-10 flex flex-col md:flex-row w-max">
             <button className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center md:mr-6 mb-6">
               Watch Trailer <ImVideoCamera className="ml-2 text-sm" />
             </button>
             <button className="px-7 py-4 bg-[white] text-black rounded-full flex items-center font-semibold">
               More Information <BsArrowRight className="ml-2 text-sm" />
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="hidden md:block">
           <img
