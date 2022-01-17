@@ -30,7 +30,7 @@ const CarouselThumb = ({
       className="w-full bg-cover bg-center bg-no-repeat h-auto"
     >
       <Header />
-      <div className="container py-20">
+      <div className="container py-14">
         <div className="px-4 mb-10">
           <Moment
             date={dateToFormat}
@@ -53,11 +53,11 @@ const CarouselThumb = ({
               ? `${overview.substring(0, 300)}...`
               : overview}
           </div>
-          <div className="text-sm mt-10 flex font-inter">
-            <button className=" tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold mr-6 font-inter">
+          <div className="mt-10 flex font-inter flex-col md:flex-row w-max">
+            <button className="text-sm tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold md:mr-6 mb-6 font-inter">
               Watch Trailer
             </button>
-            <button className="flex items-center font-inter font-semibold">
+            <button className="px-7 py-4 bg-[white] text-black rounded-full text-sm flex items-center font-inter font-semibold">
               More Information <BsArrowRight className="ml-2" />
             </button>
           </div>
