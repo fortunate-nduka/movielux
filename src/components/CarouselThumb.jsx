@@ -48,7 +48,7 @@ const CarouselThumb = ({
               {vote_count}
             </span>
           </div>
-          <div>
+          <div className="text-sm leading-6">
             {overview.length > 300
               ? `${overview.substring(0, 300)}...`
               : overview}
