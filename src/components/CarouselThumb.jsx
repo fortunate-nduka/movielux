@@ -28,10 +28,10 @@ const CarouselThumb = ({
   return (
     <div
       style={style}
-      className="w-full bg-cover bg-center bg-no-repeat h-auto"
+      className="w-full bg-cover bg-center bg-no-repeat h-screen md:h-auto"
     >
       <Header />
-      <div className="container py-14 relative">
+      <div className="container pt-20 relative flex justify-center items-center">
         <div className="absolute right-3 top-5">
           <button className="border border-white rounded-full p-2 mr-3">
             <BsArrowLeft fontSize={15} />
