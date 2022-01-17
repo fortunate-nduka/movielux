@@ -54,8 +54,8 @@ const CarouselThumb = ({
             </span>
           </div>
           <div className="text-sm leading-6">
-            {overview.length > 300
-              ? `${overview.substring(0, 300)}...`
+            {overview.length > 250
+              ? `${overview.substring(0, 250)}...`
               : overview}
           </div>
           <button className="mt-10 tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center md:mr-6 cursor-pointer">
