@@ -3,12 +3,12 @@ import { BiSearch } from "react-icons/bi";
 
 const Header = () => {
   return (
-    <header className="bg-[rgba(0,0,0,.5)] h-14 px-5 flex items-center">
+    <header className="bg-[rgba(0,0,0,.5)] h-20 px-5 flex items-center">
       <div className="container mx-auto flex justify-between">
         <Link to="/" className="text-2xl font-bold">
           Movielux
         </Link>
-        <BiSearch fontSize={30} />
+        <BiSearch fontSize={26} />
       </div>
     </header>
   );
