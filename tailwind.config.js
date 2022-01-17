@@ -4,8 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["inter", "sans-serif"],
-        gothic: ["trump-gothic, sans-serif"],
+        poppins: ["poppins", "sans-serif"],
       },
       colors: {
         black3: "rgba(0,0,0,.3)",

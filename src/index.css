@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply font-inter tracking-wider bg-black text-white;
+    @apply font-poppins tracking-wider bg-black text-white;
   }
 }
