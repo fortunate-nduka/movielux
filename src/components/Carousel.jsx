@@ -20,7 +20,6 @@ const Carousel = () => {
     };
     fetchMovies();
   }, []);
-  const carouselRef = useRef();
 
   return (
     <Slider

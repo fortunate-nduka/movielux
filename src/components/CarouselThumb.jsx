@@ -42,8 +42,8 @@ const CarouselThumb = ({
         </div>
         <div className="px-4 mb-10">
           <Moment date={dateToFormat} fromNow className="text-gray-300" />
-          <div className="text-4xl font-bold mt-4">{title || name}</div>
-          <div className="flex space-x-4 my-6">
+          <div className="text-3xl font-bold mt-4">{title || name}</div>
+          <div className="flex space-x-4 my-5">
             <span className="flex items-center text-gray-300">
               <AiFillStar className="mr-2 text-[yellow]" />
               {vote_average}
