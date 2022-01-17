@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: trump-gothic;
-  src: url(./assets/trump-gothic.ttf);
-}
-
 @layer base {
   body {
     @apply font-inter tracking-wide bg-black text-white;
