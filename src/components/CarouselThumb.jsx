@@ -28,7 +28,7 @@ const CarouselThumb = ({
   return (
     <div
       style={style}
-      className="w-full bg-cover bg-center bg-no-repeat h-[40rem] lg:h-full"
+      className="w-full bg-cover bg-center bg-no-repeat min-h-screen md:h-full"
     >
       <Header />
       <div className="container pt-24 pb-20 md:mx-auto md:px-5 relative flex justify-center lg:justify-between items-center">
