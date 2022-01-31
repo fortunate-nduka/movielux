@@ -2,8 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Liberty";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf");
+}
+
 @layer base {
   body {
     @apply font-poppins tracking-wider bg-black text-white text-xs md:text-sm;
+  }
+  .nav-link {
+    @apply text-xl duration-100 transform cursor-pointer transition hover:scale-105 hover:text-red-500 active:text-red-500 last:pr-24;
+  }
+  .letter {
+    color: #d9fdff;
+    text-shadow: 0 0 2rem #00f0ff;
+    display: inline-block;
+  }
+  .letter-ani {
+    transform: translate(-0.1px, 0.2rem) rotate(5deg);
+    animation: flicker 2s ease-in-out infinite alternate;
   }
 }

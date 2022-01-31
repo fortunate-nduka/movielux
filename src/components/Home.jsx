@@ -1,12 +1,14 @@
 import { Fragment } from "react";
-import Carousel from "../components/Carousel";
-import Nav from "../components/Nav";
+import Movies from "./Movies";
+import Carousel from "./Carousel";
+import Nav from "./Nav";
 
 const Home = () => {
   return (
     <Fragment>
       <Carousel />
       <Nav />
+      <Movies />
     </Fragment>
   );
 };

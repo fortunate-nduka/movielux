@@ -1,13 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./containers/Home.jsx";
+import { DataProvider } from "./context/DataContext";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Search from "./components/Search";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <DataProvider>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
-    </BrowserRouter>
+    </DataProvider>
   );
 };
 

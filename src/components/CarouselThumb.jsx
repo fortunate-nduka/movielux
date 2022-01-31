@@ -19,7 +19,7 @@ const CarouselThumb = ({
   overview,
 })=> {
   const style = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(${
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1)),url(${
       imgBase + backdrop_path
     })`,
   };
@@ -28,10 +28,10 @@ const CarouselThumb = ({
   return (
     <div
       style={style}
-      className="w-full bg-cover bg-center bg-no-repeat min-h-screen h-auto"
+      className="w-full bg-cover bg-center bg-no-repeat h-[40rem] lg:h-full"
     >
       <Header />
-      <div className="container pt-24 pb-20 relative flex justify-center items-center">
+      <div className="container pt-24 pb-20 md:mx-auto md:px-5 relative flex justify-center lg:justify-between items-center">
         <div className="absolute right-3 top-5">
           <button className="border border-white rounded-full p-2 mr-3">
             <BsArrowLeft fontSize={15} />
@@ -40,40 +40,34 @@ const CarouselThumb = ({
             <BsArrowRight fontSize={15} />
           </button>
         </div>
-        <div className="px-4 mb-10">
+        <div className="px-4 mb-10 lg:basis-3/5">
           <Moment date={dateToFormat} fromNow className="text-gray-300" />
-          <div className="text-3xl font-bold mt-4">{title || name}</div>
+          <div className="text-3xl md:text-4xl font-bold mt-4 md:mt-5">
+            {title || name}
+          </div>
           <div className="flex space-x-4 my-5">
-            <span className="flex items-center text-gray-300">
-              <AiFillStar className="mr-2 text-[yellow]" />
+            <span className="flex items-center text-gray-300 font-bold">
+              <AiFillStar className="mr-2 text-[yellow] md:text-lg" />
               {vote_average}
             </span>
-            <span className="flex items-center text-gray-300">
-              <FaThumbsUp className="mr-2 text-[red]" />
+            <span className="flex items-center text-gray-300 font-bold">
+              <FaThumbsUp className="mr-2 text-[red] md:text-lg" />
               {vote_count}
             </span>
           </div>
-          <div className="text-sm leading-6">
+          <div className="text-xs md:text-sm lg:text-base leading-6 md:mt-4">
             {overview.length > 250
-              ? `${overview.substring(0, 250)}...`
+              ? `${overview.substring(0, 200)}...`
               : overview}
           </div>
           <button className="mt-10 tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center md:mr-6 cursor-pointer">
             More Information <BsArrowRight className="ml-2 text-sm" />
           </button>
-          {/* <div className="mt-10 flex flex-col md:flex-row w-max">
-            <button className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center md:mr-6 mb-6">
-              Watch Trailer <ImVideoCamera className="ml-2 text-sm" />
-            </button>
-            <button className="px-7 py-4 bg-[white] text-black rounded-full flex items-center font-semibold">
-              More Information <BsArrowRight className="ml-2 text-sm" />
-            </button>
-          </div> */}
         </div>
-        <div className="hidden md:block">
+        <div className="hidden lg:block lg:w-1/4">
           <img
             src={`${imgBase + poster_path}`}
-            className="rounded-lg mx-auto"
+            className="rounded-lg mx-auto w-full"
             alt="movie poster"
           />
         </div>
