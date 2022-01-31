@@ -3,7 +3,7 @@ import { BiSearch } from "react-icons/bi";
 
 const Header = () => {
   return (
-    <header className="bg-[rgba(0,0,0,.5)] py-6 px-5 flex items-center">
+    <header className="bg-[rgba(0,0,0,.7)] py-6 px-5 flex items-center">
       <div className="container mx-auto flex justify-between">
         <Link to="/" className="text-lg md:text-xl font-bold uppercase tracking-widest">
           <h1 class="font-liberty">
