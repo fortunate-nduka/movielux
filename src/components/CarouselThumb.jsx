@@ -1,4 +1,4 @@
-import { imgBase } from "../utils/urls";
+import { imgBase } from "../utils/requests";
 import Header from "./Header";
 import Moment from "react-moment";
 import { AiFillStar } from "react-icons/ai";
@@ -63,11 +63,11 @@ const CarouselThumb = ({
             {title || name}
           </div>
           <div className="flex space-x-6 md:space-x-7 my-5 md:my-6 lg:my-7">
-            <span className="flex items-center text-gray-300 md:font-bold">
+            <span className="flex items-center text-gray-300 font-bold">
               <AiFillStar className="mr-1 text-[yellow] text-sm md:text-lg" />
               {vote_average}
             </span>
-            <span className="flex items-center text-gray-300 md:font-bold">
+            <span className="flex items-center text-gray-300 font-bold">
               <FaThumbsUp className="mr-1 text-[red] text-sm md:text-lg" />
               {vote_count}
             </span>
