@@ -62,13 +62,13 @@ const CarouselThumb = ({
           <div className="text-3xl md:text-4xl font-bold mt-4 md:mt-5">
             {title || name}
           </div>
-          <div className="flex space-x-4 md:space-x-6 my-5 md:my-7">
+          <div className="flex space-x-6 md:space-x-7 my-5">
             <span className="flex items-center text-gray-300 md:font-bold">
-              <AiFillStar className="mr-2 text-[yellow] text-sm md:text-lg" />
+              <AiFillStar className="mr-1 text-[yellow] text-sm md:text-lg" />
               {vote_average}
             </span>
             <span className="flex items-center text-gray-300 md:font-bold">
-              <FaThumbsUp className="mr-2 text-[red] text-sm md:text-lg" />
+              <FaThumbsUp className="mr-1 text-[red] text-sm md:text-lg" />
               {vote_count}
             </span>
             <span className="text-gray-300">

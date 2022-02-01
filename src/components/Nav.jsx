@@ -27,7 +27,7 @@ const Nav = () => {
         {genres.map((genre) => (
           <div
             key={genre.id}
-            className="border-2 border-red-600 shadow-lg px-5 py-3 rounded-full cursor-pointer selection:bg-red-600 selection:text-white"
+            className="border md:border-2 border-red-600 shadow-lg px-5 py-3 rounded-full cursor-pointer selection:bg-red-600 selection:text-white"
             onClick={() => setGenre(genre.id)}
           >
             {genre.name}
