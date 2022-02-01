@@ -62,7 +62,7 @@ const CarouselThumb = ({
           <div className="text-3xl md:text-4xl font-bold mt-4 md:mt-5">
             {title || name}
           </div>
-          <div className="flex space-x-6 md:space-x-7 my-5">
+          <div className="flex space-x-6 md:space-x-7 my-5 md:my-6 lg:my-7">
             <span className="flex items-center text-gray-300 md:font-bold">
               <AiFillStar className="mr-1 text-[yellow] text-sm md:text-lg" />
               {vote_average}
@@ -87,7 +87,7 @@ const CarouselThumb = ({
         <div className="hidden lg:block lg:w-1/4">
           <img
             src={`${imgBase + poster_path}`}
-            className="rounded-lg mx-auto w-full shadow-lg"
+            className="rounded-lg mx-auto shadow-lg w-11/12"
             alt="movie poster"
           />
         </div>
