@@ -5,6 +5,7 @@ import { AiFillStar } from "react-icons/ai";
 import { FaThumbsUp } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
+import millify from "millify";
 // import lang from "../utils/lang";
 
 const CarouselThumb = ({
@@ -59,7 +60,7 @@ const CarouselThumb = ({
         </div>
         <div className="px-4 mb-10 lg:basis-3/5">
           <Moment date={dateToFormat} fromNow className="text-gray-300" />
-          <div className="text-3xl md:text-4xl font-bold mt-4 md:mt-5">
+          <div className="text-3xl md:text-4xl font-bold mt-4 md:mt-5 w-full">
             {title || name}
           </div>
           <div className="flex space-x-6 md:space-x-7 my-5 md:my-6 lg:my-7">
@@ -68,10 +69,10 @@ const CarouselThumb = ({
               {vote_average}
             </span>
             <span className="flex items-center text-gray-300 font-bold">
-              <FaThumbsUp className="mr-1 text-[red] text-sm md:text-lg" />
-              {vote_count}
+              <FaThumbsUp className="mr-1 text-[#6b1414] text-sm md:text-lg" />
+              {millify(vote_count)}
             </span>
-            <span className="text-gray-300">
+            <span className="text-gray-300 font-bold">
               Language: <span className="capitalize text-[yellow]">{lang}</span>
             </span>
           </div>
