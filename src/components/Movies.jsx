@@ -12,7 +12,7 @@ const Movies = () => {
           <img
             src={imgBase + movie.poster_path}
             alt={movie.title}
-            className="w-[25rem] sm:w-[15rem] rounded-lg"
+            className="w-[22rem] sm:w-[15rem] rounded-lg"
           />
           hello
         </div>
