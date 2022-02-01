@@ -5,7 +5,7 @@ import { AiFillStar } from "react-icons/ai";
 import { FaThumbsUp } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
-// import { ImVideoCamera } from "react-icons/im";
+// import lang from "../utils/lang";
 
 const CarouselThumb = ({
   title,
@@ -17,7 +17,8 @@ const CarouselThumb = ({
   vote_count,
   first_air_date,
   overview,
-})=> {
+  original_language,
+}) => {
   const style = {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1)),url(${
       imgBase + backdrop_path
@@ -25,6 +26,22 @@ const CarouselThumb = ({
   };
 
   const dateToFormat = release_date || first_air_date;
+
+  let lang = "";
+  switch (original_language) {
+    case "en":
+      lang = "English";
+      break;
+    case "ko":
+      lang = "Korean";
+      break;
+    case "ja":
+      lang = "Japanese";
+      break;
+    default:
+      lang = original_language;
+      break;
+  }
   return (
     <div
       style={style}
@@ -45,14 +62,17 @@ const CarouselThumb = ({
           <div className="text-3xl md:text-4xl font-bold mt-4 md:mt-5">
             {title || name}
           </div>
-          <div className="flex space-x-4 my-5">
+          <div className="flex space-x-4 md:space-x-6 my-5 md:my-7">
             <span className="flex items-center text-gray-300 font-bold">
-              <AiFillStar className="mr-2 text-[yellow] md:text-lg" />
+              <AiFillStar className="mr-2 text-[yellow] text-sm md:text-lg" />
               {vote_average}
             </span>
             <span className="flex items-center text-gray-300 font-bold">
-              <FaThumbsUp className="mr-2 text-[red] md:text-lg" />
+              <FaThumbsUp className="mr-2 text-[red] text-sm md:text-lg" />
               {vote_count}
+            </span>
+            <span className="text-gray-300">
+              Language: <span className="capitalize text-[yellow]">{lang}</span>
             </span>
           </div>
           <div className="text-xs md:text-sm lg:text-base leading-6 md:mt-4">
@@ -67,7 +87,7 @@ const CarouselThumb = ({
         <div className="hidden lg:block lg:w-1/4">
           <img
             src={`${imgBase + poster_path}`}
-            className="rounded-lg mx-auto w-full"
+            className="rounded-lg mx-auto w-full shadow-lg"
             alt="movie poster"
           />
         </div>
