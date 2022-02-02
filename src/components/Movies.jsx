@@ -5,12 +5,14 @@ import { imgBase } from "../utils/requests";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import PageControl from "./PageControl";
+import Spinner from "./Spinner";
 
 const Movies = () => {
-  const { movies } = useContext(DataContext);
-  console.log(movies);
+  const { movies, loading } = useContext(DataContext);
 
-  return (
+  return loading ? (
+    <Spinner />
+  ) : (
     <Fragment>
       <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-14 px-5 my-24">
         {movies.map((movie) => (
@@ -23,7 +25,7 @@ const Movies = () => {
             <div className="relative">
               <div
                 style={{ width: 50, height: 50 }}
-                className="absolute right-3 -translate-y-9 ml-3"
+                className="absolute right-3 -translate-y-7 ml-3"
               >
                 <CircularProgressbar
                   value={movie.vote_average}
@@ -33,21 +35,21 @@ const Movies = () => {
                   background
                   backgroundPadding={6}
                   styles={buildStyles({
-                    backgroundColor: "#ff3030",
+                    backgroundColor: "#000000",
                     textColor: "#fff",
-                    pathColor: "#fff",
+                    pathColor: "#ff3030",
                     trailColor: "transparent",
                     textSize: "25px",
                   })}
                 />
               </div>
-              <div className="text-base font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-4 mb-2 px-1">
+              <div className="text-base font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-5 mb-[2px] px-1">
                 {movie.title}
               </div>
               <Moment
                 date={movie.release_date}
                 fromNow
-                className="px-1 text-xs text-gray-400"
+                className="px-1 text-[11px] md:text-xs text-gray-400"
               />
             </div>
           </div>

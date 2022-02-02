@@ -6,7 +6,9 @@ import { FaThumbsUp } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
 import millify from "millify";
-// import lang from "../utils/lang";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
+import Spinner from "./Spinner";
 
 const CarouselThumb = ({
   title,
@@ -22,6 +24,7 @@ const CarouselThumb = ({
   handleNext,
   handlePrev,
 }) => {
+  const { loading } = useContext(DataContext);
   const style = {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1)),url(${
       imgBase + backdrop_path
@@ -45,7 +48,10 @@ const CarouselThumb = ({
       lang = original_language;
       break;
   }
-  return (
+
+  return loading ? (
+    <Spinner />
+  ) : (
     <div
       style={style}
       className="w-full bg-cover bg-center bg-no-repeat min-h-screen md:h-full"
@@ -78,7 +84,7 @@ const CarouselThumb = ({
             <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-5 md:mx-7"></div>
             <span className="capitalize text-[yellow]">{lang}</span>
           </div>
-          <div className="text-xs md:text-sm leading-5 md:leading-6 md:mt-4">
+          <div className="text-xs md:text-sm leading-7 md:mt-4">
             {overview.length > 250
               ? `${overview.substring(0, 200)}...`
               : overview}

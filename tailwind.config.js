@@ -10,9 +10,28 @@ module.exports = {
       colors: {
         black3: "rgba(0,0,0,.3)",
       },
-      // screens: {
-      //   // 'xs': '1600px',
-      // },
+      keyframes: {
+        "round-reverse": {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(-360deg)",
+          },
+        },
+        round: {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
+      },
+      animation: {
+        "round": "round 1.7s linear infinite",
+        "round-reverse": "round-reverse 0.6s linear infinite",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
