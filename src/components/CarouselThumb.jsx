@@ -63,18 +63,18 @@ const CarouselThumb = ({
           <div className="text-3xl md:text-4xl font-bold mt-4 md:mt-5 w-full">
             {title || name}
           </div>
-          <div className="flex space-x-6 md:space-x-7 my-5 md:my-6 lg:my-7">
+          <div className="flex items-center my-5 md:my-6 lg:my-7">
             <span className="flex items-center text-gray-300 font-bold">
               <AiFillStar className="mr-1 text-[yellow] text-sm md:text-lg" />
               {vote_average}
             </span>
+            <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-3 md:mx-4"></div>
             <span className="flex items-center text-gray-300 font-bold">
               <FaThumbsUp className="mr-1 text-[#ff3030] text-sm md:text-lg" />
               {millify(vote_count)}
             </span>
-            <span className="text-gray-300">
-              Language: <span className="capitalize text-[yellow]">{lang}</span>
-            </span>
+            <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-3 md:mx-4"></div>
+            <span className="capitalize text-[yellow]">{lang}</span>
           </div>
           <div className="text-xs md:text-sm leading-8 md:mt-4">
             {overview.length > 250
