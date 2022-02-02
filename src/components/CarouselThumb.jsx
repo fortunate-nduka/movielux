@@ -69,10 +69,10 @@ const CarouselThumb = ({
               {vote_average}
             </span>
             <span className="flex items-center text-gray-300 font-bold">
-              <FaThumbsUp className="mr-1 text-[#6b1414] text-sm md:text-lg" />
+              <FaThumbsUp className="mr-1 text-[#ff3030] text-sm md:text-lg" />
               {millify(vote_count)}
             </span>
-            <span className="text-gray-300 font-bold">
+            <span className="text-gray-300">
               Language: <span className="capitalize text-[yellow]">{lang}</span>
             </span>
           </div>

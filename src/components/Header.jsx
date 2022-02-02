@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between">
         <Link to="/" className="text-lg md:text-xl font-bold uppercase tracking-widest">
           <h1 class="font-liberty">
-            <span class="letter letter-ani">M</span>
+            <span class="letter letter-ani"></span>
             <span class="letter">O</span>
             <span class="letter letter-3">V</span>
             <span class="letter letter-4">I</span>
