@@ -6,9 +6,9 @@ import { FaThumbsUp } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
 import millify from "millify";
-import { useContext } from "react";
-import DataContext from "../context/DataContext";
-import Spinner from "./Spinner";
+// import { useContext } from "react";
+// import DataContext from "../context/DataContext";
+// import Loader from "./Loader";
 
 const CarouselThumb = ({
   title,
@@ -24,7 +24,6 @@ const CarouselThumb = ({
   handleNext,
   handlePrev,
 }) => {
-  const { loading } = useContext(DataContext);
   const style = {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1)),url(${
       imgBase + backdrop_path
@@ -49,9 +48,7 @@ const CarouselThumb = ({
       break;
   }
 
-  return loading ? (
-    <Spinner />
-  ) : (
+  return (
     <div
       style={style}
       className="w-full bg-cover bg-center bg-no-repeat min-h-screen md:h-full"

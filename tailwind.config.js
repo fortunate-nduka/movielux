@@ -11,17 +11,9 @@ module.exports = {
         black3: "rgba(0,0,0,.3)",
       },
       keyframes: {
-        "round-reverse": {
+        rotate: {
           "0%": {
-            transform: "rotate(0deg)",
-          },
-          "100%": {
-            transform: "rotate(-360deg)",
-          },
-        },
-        round: {
-          "0%": {
-            transform: "rotate(0deg)",
+            transform: "rotate(0)",
           },
           "100%": {
             transform: "rotate(360deg)",
@@ -29,8 +21,7 @@ module.exports = {
         },
       },
       animation: {
-        "round": "round 1.7s linear infinite",
-        "round-reverse": "round-reverse 0.6s linear infinite",
+        rotate: "rotate .5s linear infinite",
       },
     },
   },

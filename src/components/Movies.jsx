@@ -5,13 +5,13 @@ import { imgBase } from "../utils/requests";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import PageControl from "./PageControl";
-import Spinner from "./Spinner";
+import Loader from "./Loader";
 
 const Movies = () => {
   const { movies, loading } = useContext(DataContext);
 
   return loading ? (
-    <Spinner />
+    <Loader />
   ) : (
     <Fragment>
       <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-14 px-5 my-24">
