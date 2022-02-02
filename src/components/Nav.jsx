@@ -27,6 +27,7 @@ const Nav = () => {
       <div className="flex px-5 space-x-7 overflow-x-scroll text-sm sm:pl-10 sm:pr-20 whitespace-nowrap sm:space-x-12 scrollbar-hide">
         {genres.map((genre) => (
           <Link
+          key={genre.id}
             to="/"
             className="border md:border-2 border-red-600 shadow-lg px-5 py-3 rounded-full cursor-pointer selection:bg-red-600 selection:text-white"
             onClick={() => setGenre(genre.id)}

@@ -12,7 +12,7 @@ const Movies = () => {
   return (
     <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-14 px-5 mt-24">
       {movies.map((movie) => (
-        <div className="flex flex-col justify-start">
+        <div key={movie.id} className="flex flex-col justify-start">
           <img
             src={imgBase + movie.poster_path}
             alt={movie.title}
@@ -44,7 +44,7 @@ const Movies = () => {
           <Moment
             date={movie.release_date}
             fromNow
-            className="text-xs text-gray-400"
+            className="px-1 text-xs text-gray-400"
           />
         </div>
       ))}
