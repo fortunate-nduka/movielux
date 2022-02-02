@@ -9,7 +9,7 @@ import {AiFillEye} from 'react-icons/ai'
 const Movies = () => {
   const { movies } = useContext(DataContext);
   console.log(movies);
-  // const dateToFormat = release_date || first_air_date;
+
   return (
     <div className="flex items-center justify-center flex-wrap gap-10 px-5 mt-24">
       {movies.map((movie) => (
@@ -19,7 +19,7 @@ const Movies = () => {
             alt={movie.title}
             className="w-[17rem] sm:w-[15rem] rounded-lg"
           />
-          <div style={{ width: 60, height: 60 }} className="-translate-y-8">
+          <div style={{ width: 50, height: 50 }} className="-translate-y-7 ml-3">
             <CircularProgressbar
               value={movie.vote_average}
               maxValue={10}
