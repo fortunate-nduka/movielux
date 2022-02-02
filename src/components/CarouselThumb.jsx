@@ -53,10 +53,10 @@ const CarouselThumb = ({
       <Header />
       <div className="container pt-24 pb-20 md:mx-auto md:px-5 relative flex justify-center lg:justify-between items-center">
         <div className="absolute right-3 top-5">
-          <button className="border border-white rounded-full p-2 mr-3">
+          <button className="border border-white rounded-full p-2 mr-3 shadow-lg">
             <BsArrowLeft fontSize={15} onClick={handlePrev} />
           </button>
-          <button className="border border-white rounded-full p-2">
+          <button className="border border-white rounded-full p-2 shadow-lg">
             <BsArrowRight fontSize={15} onClick={handleNext} />
           </button>
         </div>
@@ -78,7 +78,7 @@ const CarouselThumb = ({
             <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-5 md:mx-7"></div>
             <span className="capitalize text-[yellow]">{lang}</span>
           </div>
-          <div className="text-xs md:text-sm leading-8 md:mt-4">
+          <div className="text-xs md:text-sm leading-5 md:leading-6 md:mt-4">
             {overview.length > 250
               ? `${overview.substring(0, 200)}...`
               : overview}
