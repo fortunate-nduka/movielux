@@ -33,7 +33,7 @@ const Movies = () => {
             )}
             <div className="relative">
               <div
-                style={{ width: 52, height: 52 }}
+                style={{ width: 50, height: 50 }}
                 className="absolute right-3 -translate-y-7 ml-3"
               >
                 <CircularProgressbar
@@ -52,7 +52,7 @@ const Movies = () => {
                   })}
                 />
               </div>
-              <div className="text-base font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-7 mb-[2px] px-1">
+              <div className="text-base font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-5 mb-[2px] px-1">
                 {movie.title}
               </div>
               <Moment

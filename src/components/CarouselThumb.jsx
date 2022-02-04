@@ -2,6 +2,7 @@ import { imgBase } from "../utils/requests";
 import Header from "./Header";
 import Moment from "react-moment";
 import { AiFillStar } from "react-icons/ai";
+import { AiOutlineEye } from "react-icons/ai";
 import { FaThumbsUp } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
@@ -88,7 +89,7 @@ const CarouselThumb = ({
               More Information <BsArrowRight className="ml-2 text-sm" />
             </button>
             <div className="flex items-center justify-center ">
-              Watch Trailer <BsArrowRight className="ml-2 text-sm" />
+              Watch Trailer <AiOutlineEye className="ml-1 text-lg" />
             </div>
           </div>
         </div>
