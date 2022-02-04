@@ -1,13 +1,14 @@
 import { genres, API_URL } from "../utils/requests";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import axios from "axios";
 import { useContext } from "react";
 import DataContext from "../context/DataContext";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
-  const { setMovies, setLoading, page } = useContext(DataContext);
+  const { setMovies, setLoading, page, setPage } = useContext(DataContext);
   const [genre, setGenre] = useState("");
+  
 
   const fetchMovies = async () => {
     try {
@@ -22,17 +23,17 @@ const Nav = () => {
   useEffect(() => {
     fetchMovies();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [genre,page]);
+  }, [genre, page]);
 
   return (
-    <nav name="test1" className="relative my-1 mb-3 sm:mb-0 sm:my-5">
+    <nav className="relative my-1 mb-3 sm:mb-0 sm:my-5">
       <div className="flex px-5 space-x-7 overflow-x-scroll text-sm sm:pl-10 sm:pr-20 whitespace-nowrap sm:space-x-12 scrollbar-hide">
         {genres.map((genre) => (
           <Link
+            onClick={() => setGenre(genre.id)(setPage(1))}
             key={genre.id}
             to="/"
             className="border md:border-2 border-red-600 shadow-lg px-5 py-3 rounded-full cursor-pointer selection:bg-red-600 selection:text-white"
-            onClick={() => setGenre(genre.id)}
           >
             {genre.name}
           </Link>

@@ -90,13 +90,13 @@ const CarouselThumb = ({
               ? `${overview.substring(0, 200)}...`
               : overview}
           </div>
-          <div className="flex flex-col md:flex-row justify-center items-center text-center gap-y-7 md:gap-y-0 md:gap-x-10 w-fit">
+          <div className="flex flex-col md:flex-row justify-center items-center text-center gap-y-7 md:gap-y-0 md:gap-x-5 w-fit">
             <button className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center cursor-pointer w-fit shadow-lg">
               More Information <BsArrowRight className="ml-2 text-sm" />
             </button>
-            <div className="tracking-wider px-7 py-4 border border-white rounded-full font-semibold flex items-center justify-center ">
+            <button className="tracking-wider px-7 py-4 border border-white rounded-full font-semibold flex items-center justify-center ">
               Watch Trailer <AiOutlineEye className="ml-2 text-lg" />
-            </div>
+            </button>
           </div>
         </div>
         <div className="hidden lg:block lg:w-1/4">
