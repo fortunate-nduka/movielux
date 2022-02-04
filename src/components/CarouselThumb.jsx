@@ -41,6 +41,12 @@ const CarouselThumb = ({
     case "ja":
       lang = "Japanese";
       break;
+    case "la":
+      lang = "Latin";
+      break;
+    case "nl":
+      lang = "Dutch";
+      break;
     default:
       lang = original_language;
       break;
@@ -67,12 +73,12 @@ const CarouselThumb = ({
             {title || name}
           </div>
           <div className="flex items-center my-5 md:my-6 lg:my-7">
-            <span className="flex items-center text-gray-300 font-bold">
+            <span className="flex items-center text-gray-300">
               <AiFillStar className="mr-1 text-[yellow] text-sm md:text-lg" />
               {vote_average}
             </span>
             <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-4 md:mx-7"></div>
-            <span className="flex items-center text-gray-300 font-bold">
+            <span className="flex items-center text-gray-300">
               <FaThumbsUp className="mr-1 text-[#ff3030] text-sm md:text-lg" />
               {millify(vote_count)}
             </span>
@@ -85,11 +91,11 @@ const CarouselThumb = ({
               : overview}
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center text-center gap-y-7 md:gap-y-0 md:gap-x-10 w-fit">
-            <button className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center cursor-pointer w-fit">
+            <button className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center cursor-pointer w-fit shadow-lg">
               More Information <BsArrowRight className="ml-2 text-sm" />
             </button>
-            <div className="flex items-center justify-center ">
-              Watch Trailer <AiOutlineEye className="ml-1 text-lg" />
+            <div className="tracking-wider px-7 py-4 border border-white rounded-full font-semibold flex items-center justify-center ">
+              Watch Trailer <AiOutlineEye className="ml-2 text-lg" />
             </div>
           </div>
         </div>
