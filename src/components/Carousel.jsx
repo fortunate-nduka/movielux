@@ -9,7 +9,6 @@ import CarouselThumb from "./CarouselThumb";
 const Carousel = () => {
   const [trends, setTrends] = useState([]);
   const sliderRef = useRef(null);
-  console.log(sliderRef.current);
 
   useEffect(() => {
     const fetchMovies = async () => {

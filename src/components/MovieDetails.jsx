@@ -1,20 +1,21 @@
 import { useContext, useEffect } from "react";
 import DataContext from "../context/DataContext";
 import { useParams } from "react-router-dom";
-import { movieDetails } from "../utils/requests";
+// import { movieDetails } from "../utils/requests";
 import axios from "axios";
 
 const MovieDetails = () => {
   const { movieDetail, setMovieDetail, setLoading } = useContext(DataContext);
   const { id } = useParams;
   const API_KEY = process.env.REACT_APP_API_KEY;
+  console.log(id);
+  const movieDetailUrl = `
+https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
 
   const fetchMovieDetails = async () => {
     try {
       setLoading(true);
-      const movieDetailRes = await axios(
-        `${movieDetails}/${id}?api_key=${API_KEY}&language=en=US`
-      );
+      const movieDetailRes = await axios(movieDetailUrl);
       setMovieDetail(movieDetailRes.data.results);
       console.log(movieDetail.data.rasults);
       setLoading(false);

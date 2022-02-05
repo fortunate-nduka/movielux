@@ -20,7 +20,7 @@ const PageControl = () => {
         className="px-4 py-3 bg-red-600 rounded-full text-xs md:text-sm tracking-widest flex items-center justify-center gap-2"
       >
         Load More
-        <BsArrowRight />
+        <BsArrowLeft />
       </button>
       <div className="mx-5 text-sm">{`Page ${page}`}</div>
       <button
