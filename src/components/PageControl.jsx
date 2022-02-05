@@ -15,19 +15,19 @@ const PageControl = () => {
 
   return (
     <div className="flex items-center justify-center mt-7 mb-14">
-      <button
+    <button
         onClick={handlePrev}
         className="px-4 py-3 bg-red-600 rounded-full text-xs md:text-sm tracking-widest flex items-center justify-center gap-2"
       >
-        <BsArrowLeft />
-        Prev
+        Load More
+        <BsArrowRight />
       </button>
       <div className="mx-5 text-sm">{`Page ${page}`}</div>
       <button
         onClick={handleNext}
         className="px-4 py-3 bg-red-600 rounded-full text-xs md:text-sm tracking-widest flex items-center justify-center gap-2"
       >
-        Next
+        Load More
         <BsArrowRight />
       </button>
     </div>

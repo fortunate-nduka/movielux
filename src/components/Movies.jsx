@@ -6,10 +6,32 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import PageControl from "./PageControl";
 import Loader from "./Loader";
-import no_image from '../assets/no_image.jpg'
+import { API_URL } from "../utils/requests";
+import { useEffect } from "react";
+import axios from "axios";
+import no_image from "../assets/no_image.jpg";
+import { Link } from "react-router-dom";
 
 const Movies = () => {
-  const { movies, loading } = useContext(DataContext);
+  const { movies, setMovies, loading, setLoading, page, genre } =
+    useContext(DataContext);
+
+  const fetchMovies = async () => {
+    try {
+      setLoading(true);
+      const moviesRes = await axios(`${API_URL} + ${genre} + &page=${page}`);
+      setMovies(moviesRes.data.results);
+      console.log(movies);
+      setLoading(false);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [genre, page]);
 
   return loading ? (
     <Loader />
@@ -17,7 +39,11 @@ const Movies = () => {
     <Fragment>
       <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-16 px-5 my-16">
         {movies.map((movie) => (
-          <div key={movie.id} className="flex flex-col justify-start">
+          <Link
+            to={`/movie/${movie.id}`}
+            key={movie.id}
+            className="flex flex-col justify-start"
+          >
             {movie.poster_path ? (
               <img
                 src={imgBase + movie.poster_path}
@@ -61,7 +87,7 @@ const Movies = () => {
                 className="px-1 text-[11px] md:text-xs text-gray-400"
               />
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <PageControl />
