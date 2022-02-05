@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
     "millify": "^4.0.0",
@@ -18,7 +16,6 @@
     "react-scroll": "^1.8.4",
     "react-slick": "^0.28.1",
     "react-youtube": "^7.14.0",
-    "sass": "^1.48.0",
     "slick-carousel": "^1.8.1",
     "tailwind-scrollbar-hide": "^1.1.7",
     "web-vitals": "^2.1.3"

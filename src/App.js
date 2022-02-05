@@ -8,7 +8,7 @@ const App = () => {
   return (
     <DataProvider>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Home />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/search" element={<Search />} />
       </Routes>

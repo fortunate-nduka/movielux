@@ -26,4 +26,11 @@
     transform: translate(-0.1px, 0.2rem) rotate(5deg);
     animation: flicker 2s ease-in-out infinite alternate;
   }
+
+  .active{
+    @apply text-4xl
+  }
+  .inactive{
+    @apply text-sm
+  }
 }

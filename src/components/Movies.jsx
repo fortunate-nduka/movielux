@@ -6,7 +6,7 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import PageControl from "./PageControl";
 import Loader from "./Loader";
-import { API_URL } from "../utils/requests";
+import { movieUrl } from "../utils/requests";
 import { useEffect } from "react";
 import axios from "axios";
 import no_image from "../assets/no_image.jpg";
@@ -19,9 +19,8 @@ const Movies = () => {
   const fetchMovies = async () => {
     try {
       setLoading(true);
-      const moviesRes = await axios(`${API_URL} + ${genre} + &page=${page}`);
+      const moviesRes = await axios(`${movieUrl} + ${genre}&page=${page}`);
       setMovies(moviesRes.data.results);
-      console.log(movies);
       setLoading(false);
     } catch (err) {
       console.log(err.message);

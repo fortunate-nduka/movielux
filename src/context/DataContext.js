@@ -6,8 +6,8 @@ export const DataProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [genre, setGenre] = useState("");
-  const [movieDetail, setMovieDetail] = useState([]);
+  const [genre, setGenre] = useState(28);
+  const [movieDetail, setMovieDetail] = useState({});
 
   return (
     <DataContext.Provider
