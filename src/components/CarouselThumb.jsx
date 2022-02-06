@@ -7,8 +7,10 @@ import { FaThumbsUp } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
 import millify from "millify";
+import { Link } from "react-router-dom";
 
 const CarouselThumb = ({
+  id,
   title,
   name,
   backdrop_path,
@@ -83,7 +85,7 @@ const CarouselThumb = ({
               {millify(vote_count)}
             </span>
             <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-4 md:mx-7"></div>
-            <span className="capitalize text-[yellow]">{lang}</span>
+            <span className="capitalize text-[#ffff00]">{lang}</span>
           </div>
           <div className="text-xs md:text-sm leading-5 md:leading-7 md:mt-4 mb-10">
             {overview.length > 250
@@ -91,9 +93,11 @@ const CarouselThumb = ({
               : overview}
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center text-center gap-y-7 md:gap-y-0 md:gap-x-5 w-fit">
-            <button className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center cursor-pointer w-fit shadow-lg">
-              More Information <BsArrowRight className="ml-2 text-sm" />
-            </button>
+            <Link key={id} to={`/movie/${id}`}>
+              <button className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center cursor-pointer w-fit shadow-lg">
+                More Information <BsArrowRight className="ml-2 text-sm" />
+              </button>
+            </Link>
             <button className="tracking-wider px-7 py-4 border border-white rounded-full font-semibold flex items-center justify-center ">
               Watch Trailer <AiOutlineEye className="ml-2 text-lg" />
             </button>

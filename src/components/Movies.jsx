@@ -32,11 +32,78 @@ const Movies = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [genre, page]);
 
+  let genreName = "";
+  switch (genre) {
+    case 28:
+      genreName = "action";
+      break;
+    case 12:
+      genreName = "adventure";
+      break;
+    case 16:
+      genreName = "animation";
+      break;
+    case 35:
+      genreName = "comedy";
+      break;
+    case 80:
+      genreName = "crime";
+      break;
+    case 99:
+      genreName = "documentary";
+      break;
+    case 18:
+      genreName = "drama";
+      break;
+    case 10751:
+      genreName = "family";
+      break;
+    case 14:
+      genreName = "fantasy";
+      break;
+    case 36:
+      genreName = "history";
+      break;
+    case 27:
+      genreName = "horror";
+      break;
+    case 10402:
+      genreName = "music";
+      break;
+    case 9648:
+      genreName = "mystery";
+      break;
+    case 10749:
+      genreName = "romance";
+      break;
+    case 878:
+      genreName = "science fiction";
+      break;
+    case 10770:
+      genreName = "tv movie";
+      break;
+    case 53:
+      genreName = "thriller";
+      break;
+    case 10752:
+      genreName = "war";
+      break;
+    case 37:
+      genreName = "western";
+      break;
+    default:
+      genreName = 'movies';
+      break;
+  }
+
   return loading ? (
     <Loader />
   ) : (
     <Fragment>
-      <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-16 px-5 my-16">
+      <div className="uppercase text-xl sm:text-2xl font-bold border-l-8 border-l-red-600 pl-4 my-10">
+        {genreName}
+      </div>
+      <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-16 px-5">
         {movies.map((movie) => (
           <Link
             to={`/movie/${movie.id}`}
