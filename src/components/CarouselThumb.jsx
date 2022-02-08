@@ -48,6 +48,9 @@ const CarouselThumb = ({
     case "nl":
       lang = "Dutch";
       break;
+    case "es":
+      lang = "Spanish";
+      break;
     default:
       lang = original_language;
       break;
@@ -70,7 +73,7 @@ const CarouselThumb = ({
         </div>
         <div className="px-4 mb-10 lg:basis-3/5">
           <Moment date={dateToFormat} fromNow className="text-gray-300" />
-          <div className="text-3xl md:text-4xl font-bold mt-4 md:mt-5 w-full">
+          <div className="font-montBlack text-3xl md:text-4xl font-bold mt-4 md:mt-5 w-full">
             {title || name}
           </div>
           <div className="flex items-center my-5 md:my-6 lg:my-7">
@@ -92,7 +95,7 @@ const CarouselThumb = ({
               : overview}
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center text-center gap-y-7 md:gap-y-0 md:gap-x-5 w-fit">
-          <Link to="">
+          <Link to="/">
               <button  className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center cursor-pointer w-fit shadow-lg">
                 More Information <BsArrowRight className="ml-2 text-sm" />
               </button>
