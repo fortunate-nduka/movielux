@@ -14,6 +14,7 @@ const Carousel = () => {
     const fetchMovies = async () => {
       const trendsRes = await axios(trendingUrl);
       setTrends(trendsRes.data.results);
+    console.log(trendsRes.data.results);
     };
     fetchMovies();
   }, []);

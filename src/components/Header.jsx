@@ -6,7 +6,7 @@ const Header = () => {
     <header className="bg-[rgba(0,0,0,.6)] py-6 px-5 flex items-center shadow-lg">
       <div className="container mx-auto flex justify-between">
         <Link to="/" className="text-lg md:text-xl font-bold uppercase tracking-widest">
-          <h1 class="font-poppins font-bold">
+          <h1 class="font-montBlack">
             <span class="letter letter-ani">M</span>
             <span class="letter">O</span>
             <span class="letter letter-3">V</span>

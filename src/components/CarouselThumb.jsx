@@ -7,7 +7,7 @@ import { FaThumbsUp } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
 import millify from "millify";
-import { Link } from "react-router-dom";
+import {Link} from 'react-router-dom'
 
 const CarouselThumb = ({
   id,
@@ -29,7 +29,6 @@ const CarouselThumb = ({
       imgBase + backdrop_path
     })`,
   };
-
   const dateToFormat = release_date || first_air_date;
 
   let lang = "";
@@ -79,25 +78,25 @@ const CarouselThumb = ({
               <AiFillStar className="mr-1 text-[yellow] text-sm md:text-lg" />
               {vote_average}
             </span>
-            <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-4 md:mx-7"></div>
+            <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-4 md:mx-5"></div>
             <span className="flex items-center text-gray-300">
               <FaThumbsUp className="mr-1 text-[#ff3030] text-sm md:text-lg" />
               {millify(vote_count)}
             </span>
-            <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-4 md:mx-7"></div>
+            <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-4 md:mx-5"></div>
             <span className="capitalize text-[#ffff00]">{lang}</span>
           </div>
-          <div className="text-xs md:text-sm leading-5 md:leading-7 md:mt-4 mb-10">
+          <div className="font-montLight text-xs md:text-sm leading-5 md:leading-7 md:mt-4 mb-10">
             {overview.length > 250
               ? `${overview.substring(0, 200)}...`
               : overview}
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center text-center gap-y-7 md:gap-y-0 md:gap-x-5 w-fit">
-            <Link key={id} to={`/movie/${id}`}>
-              <button className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center cursor-pointer w-fit shadow-lg">
+          <Link to="">
+              <button  className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center cursor-pointer w-fit shadow-lg">
                 More Information <BsArrowRight className="ml-2 text-sm" />
               </button>
-            </Link>
+              </Link>
             <button className="tracking-wider px-7 py-4 border border-white rounded-full font-semibold flex items-center justify-center ">
               Watch Trailer <AiOutlineEye className="ml-2 text-lg" />
             </button>
