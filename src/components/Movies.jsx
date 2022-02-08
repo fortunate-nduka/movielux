@@ -131,7 +131,7 @@ const Movies = () => {
                 <CircularProgressbar
                   value={movie.vote_average}
                   maxValue={10}
-                  text={`${movie.vote_average * 10}%`}
+                  text={`${movie.vote_average / 1}`}
                   strokeWidth={7}
                   background
                   backgroundPadding={6}
@@ -140,7 +140,7 @@ const Movies = () => {
                     textColor: "#fff",
                     pathColor: "#ff3030",
                     trailColor: "transparent",
-                    textSize: "25px",
+                    textSize: "30px",
                   })}
                 />
               </div>
