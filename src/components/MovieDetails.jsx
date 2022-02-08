@@ -3,7 +3,7 @@ import DataContext from "../context/DataContext";
 import { useParams } from "react-router-dom";
 import { movieDetailUrl } from "../utils/requests";
 import axios from "axios";
-// import Header from "./Header";
+import Header from "./Header";
 // import { imgBase } from "../utils/requests";
 // import { AiOutlineEye } from "react-icons/ai";
 // import Moment from "react-moment";
@@ -58,9 +58,10 @@ const MovieDetails = () => {
 
   return (
     <div className="">
-
+      <Header />
+      <div className=""></div>
     </div>
-      );
+  );
 };
 
 export default MovieDetails;

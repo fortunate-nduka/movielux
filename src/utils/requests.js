@@ -2,7 +2,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const imgBase = "https://image.tmdb.org/t/p/original";
 export const baseUrl = "https://api.themoviedb.org/3";
-export const trendingUrl = `${baseUrl}/trending/all/day?api_key=${API_KEY}&language=em-US&append_to_response=videos&page=1`;
+export const trendingUrl = `${baseUrl}/trending/all/day?api_key=${API_KEY}&language=em-US&append_to_response=videos`;
 export const movieUrl = `${baseUrl}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&with_genres=`;
 export const movieDetailUrl = `${baseUrl}/movie`;
 // export const API_URL = `${baseUrl}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=`;

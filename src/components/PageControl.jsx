@@ -15,7 +15,7 @@ const PageControl = () => {
   };
 
   return (
-    <div className="flex items-center justify-center mt-7 mb-14">
+    <div className="flex items-center justify-center mt-20 md:mt-24 mb-14">
       <Link to="nav-container" spy={true}>
         {page <= 1 ? (
           <button className="bg-gray-900 px-4 py-3 rounded-full text-xs md:text-sm tracking-widest flex items-center justify-center gap-2 text-gray-500">
