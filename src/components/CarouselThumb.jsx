@@ -89,7 +89,7 @@ const CarouselThumb = ({
             <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-4 md:mx-5"></div>
             <span className="capitalize text-[#ffff00]">{lang}</span>
           </div>
-          <div className="text-sm leading-5 md:leading-7 md:mt-4 mb-10">
+          <div className="leading-5 md:leading-7 md:mt-4 mb-10">
             {overview.length > 250
               ? `${overview.substring(0, 200)}...`
               : overview}
