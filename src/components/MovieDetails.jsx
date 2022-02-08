@@ -23,11 +23,8 @@ const MovieDetails = () => {
       const movieDetailRes = await axios(
         `${movieDetailUrl}/${id}?api_key=${API_KEY}&language=en-US&append_to_response=videos`
       );
-      console.log(movieDetailRes.data);
-      setTimeout(() => {
-        setMovieDetail(movieDetailRes.data);
-        setLoading(false);
-      }, 1000);
+      setMovieDetail(movieDetailRes.data);
+      setLoading(false);
     } catch (err) {
       console.log(err.message);
     }
@@ -122,7 +119,7 @@ const MovieDetails = () => {
               ))}
             </div>
           )}
-          {movieDetail.budget !==  0 && (
+          {movieDetail.budget !== 0 && (
             <div className="flex items-end gap-4 mb-9">
               <span className="font-bold text-sm">Budget: </span>
               <span className="text-gray-400">
