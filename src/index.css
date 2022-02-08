@@ -32,10 +32,6 @@
     @apply font-montRegular tracking-wider bg-black text-white text-xs sm:text-sm;
   }
 
-  .nav-link {
-    @apply text-xl duration-100 transform cursor-pointer transition hover: scale-105 hover:text-red-500 active:text-red-500 last:pr-24;
-  }
-
   .letter {
     color: #d9fdff;
     text-shadow: 0 0 2rem #00f0ff;
@@ -46,39 +42,4 @@
     transform: translate(-0.1px, 0.2rem) rotate(5deg);
     animation: flicker 2s ease-in-out infinite alternate;
   }
-
-  .glitch{
-  color:white;
-  font-size:100px;
-  position:relative;
-  width:400px;
-  margin:0 auto;
-}
-
-
-.glitch:after{
-  content:attr(data-text);
-  position:absolute;
-  left:2px;
-  text-shadow:-1px 0 red;
-  top:0;
-  color:white;
-  background:black;
-  overflow:hidden;
-  clip:rect(0,900px,0,0); 
-  animation:noise-anim 2s infinite linear alternate-reverse;
-}
-
-.glitch:before{
-  content:attr(data-text);
-  position:absolute;
-  left:-2px;
-  text-shadow:1px 0 blue; 
-  top:0;
-  color:white;
-  background:black;
-  overflow:hidden;
-  clip:rect(0,900px,0,0); 
-  animation:noise-anim-2 3s infinite linear alternate-reverse;
-}
 }
