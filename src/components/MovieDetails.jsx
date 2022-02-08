@@ -119,14 +119,14 @@ const MovieDetails = () => {
               ))}
             </div>
           )}
-          {movieDetail.budget !== 0 && (
+          {/* {movieDetail.budget !== 0 && (
             <div className="flex items-end gap-4 mb-9">
               <span className="font-bold text-sm">Budget: </span>
               <span className="text-gray-400">
                 {millify(movieDetail.budget)} Dollars
               </span>
             </div>
-          )}
+          )} */}
           {movieDetail.production_companies && (
             <div className="flex flex-col gap-4 mb-7">
               <span className="font-bold text-sm">Production Companies: </span>
