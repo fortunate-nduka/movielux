@@ -8,13 +8,17 @@ export const DataProvider = ({ children }) => {
   const [page, setPage] = useState(1);
   const [genre, setGenre] = useState(28);
   const [movieDetail, setMovieDetail] = useState({});
+  const [recommended, setRecommended] = useState([]);
 
   return (
     <DataContext.Provider
       value={{
         movies,
         setMovies,
-        movieDetail,setMovieDetail,
+        movieDetail,
+        setMovieDetail,
+        recommended,
+        setRecommended,
         loading,
         setLoading,
         page,

@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import DataContext from "../context/DataContext";
 import { useParams } from "react-router-dom";
-import { movieDetailUrl } from "../utils/requests";
+import { baseUrl, movieDetailUrl } from "../utils/requests";
 import axios from "axios";
 import Header from "./Header";
 import { imgBase } from "../utils/requests";
@@ -12,8 +12,14 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import Loader from "./Loader";
 
 const MovieDetails = () => {
-  const { movieDetail, setMovieDetail, setLoading, loading } =
-    useContext(DataContext);
+  const {
+    movieDetail,
+    setMovieDetail,
+    setLoading,
+    loading,
+    recommended,
+    setRecommended,
+  } = useContext(DataContext);
   const { id } = useParams();
   const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -23,6 +29,11 @@ const MovieDetails = () => {
       const movieDetailRes = await axios(
         `${movieDetailUrl}/${id}?api_key=${API_KEY}&language=en-US&append_to_response=videos`
       );
+      const recommended = await axios(
+        `${baseUrl}/movie/${id}/recommendations?api_key=${API_KEY}&language=en-US&page=1`
+      );
+      setRecommended(recommended.data.results);
+      console.log(recommended.data.results);
       setTimeout(() => {
         setMovieDetail(movieDetailRes.data);
         setLoading(false);
@@ -72,74 +83,78 @@ const MovieDetails = () => {
   ) : (
     <div>
       <Header />
-      <div className=" container px-4">
-        <img
-          src={imgBase + movieDetail.poster_path}
-          alt=""
-          className="mt-4 mb-5 w-[17rem] rounded-lg shadow-lg"
-        />
-        <div className="">
-          <div className="font-montBold text-2xl mt-6 mb-5">
-            {movieDetail.title || movieDetail.name}
-          </div>
-          <div className="flex items-center gap-6 mb-8">
-            <div style={{ width: 50, height: 50 }} className="">
-              <CircularProgressbar
-                value={movieDetail.vote_average}
-                maxValue={10}
-                text={`${movieDetail.vote_average / 1}`}
-                strokeWidth={7}
-                background
-                backgroundPadding={6}
-                styles={buildStyles({
-                  backgroundColor: "#000000",
-                  textColor: "#fff",
-                  pathColor: "#ff3030",
-                  trailColor: "transparent",
-                  textSize: "30px",
-                })}
-              />
-            </div>
-            {movieDetail.adult === true && <span>pg</span>}
-            <span>{time_convert(movieDetail.runtime)}</span>
-            <Moment date={dateToFormat} fromNow />
-          </div>
+      <div className="container px-6 flex flex-col lg:flex-row">
+        <div className="lg:basis-[70%]">
           <div className="">
-            {movieDetail.tagline && (
-              <div className="flex items-end gap-4 mb-9">
-                <span className="font-bold text-sm">Tagline: </span>
-                <span className="text-gray-400">{movieDetail.tagline}</span>
-              </div>
-            )}
-            {movieDetail.adult && (
-              <div className="flex items-end gap-4 mb-9">
-                <span className="font-bold text-sm">PG: </span>
-                {movieDetail.adult === true ? (
-                  <span className="text-gray-400">True</span>
-                ) : (
-                  <span className="text-gray-400">False</span>
-                )}
-              </div>
-            )}
-            {movieDetail.original_language && (
-              <div className="flex items-end gap-4 mb-9">
-                <span className="font-bold text-sm">Language: </span>
-                <span className="text-gray-400">{lang}</span>
-              </div>
-            )}
-            {movieDetail.genres && (
-              <div className="flex flex-col gap-4 mb-7">
-                <span className="font-bold text-sm">Genres: </span>
-                <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
-                  {movieDetail.genres.map((genre) => (
-                    <span className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
-                      {genre.name}
-                    </span>
-                  ))}
+            <div className="md:flex items-start gap-5">
+              <img
+                src={imgBase + movieDetail.poster_path}
+                alt=""
+                className="mt-4 md:mt-10 mb-5 w-[17rem] rounded-lg shadow-lg"
+              />
+              <div className="">
+                <div className="font-montBold text-2xl mt-7 mb-6">
+                  {movieDetail.title || movieDetail.name}
                 </div>
-              </div>
-            )}
-            {/* {movieDetail.budget !== 0 && (
+                <div className="flex items-center gap-6 mb-8">
+                  <div style={{ width: 50, height: 50 }} className="">
+                    <CircularProgressbar
+                      value={movieDetail.vote_average}
+                      maxValue={10}
+                      text={`${movieDetail.vote_average / 1}`}
+                      strokeWidth={7}
+                      background
+                      backgroundPadding={6}
+                      styles={buildStyles({
+                        backgroundColor: "#000000",
+                        textColor: "#fff",
+                        pathColor: "#ff3030",
+                        trailColor: "transparent",
+                        textSize: "30px",
+                      })}
+                    />
+                  </div>
+                  <span>{time_convert(movieDetail.runtime)}</span>
+                  <Moment date={dateToFormat} fromNow />
+                </div>
+                <div className="">
+                  {movieDetail.tagline && (
+                    <div className="flex items-end gap-4 mb-10">
+                      <span className="font-bold text-sm">Tagline: </span>
+                      <span className="text-gray-400">
+                        {movieDetail.tagline}
+                      </span>
+                    </div>
+                  )}
+                  <div className="flex items-end gap-4 mb-10">
+                    <span className="font-bold text-sm">
+                      Parental Guidance:{" "}
+                    </span>
+                    {movieDetail.adult === true ? (
+                      <span className="text-gray-400 font-bold">YES</span>
+                    ) : (
+                      <span className="text-gray-400 font-bold">NO</span>
+                    )}
+                  </div>
+                  {movieDetail.original_language && (
+                    <div className="flex items-end gap-4 mb-10">
+                      <span className="font-bold text-sm">Language: </span>
+                      <span className="text-gray-400">{lang}</span>
+                    </div>
+                  )}
+                  {movieDetail.genres && (
+                    <div className="flex flex-col gap-4 mb-10">
+                      <span className="font-bold text-sm">Genres: </span>
+                      <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
+                        {movieDetail.genres.map((genre) => (
+                          <span className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
+                            {genre.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {/* {movieDetail.budget !== 0 && (
             <div className="flex items-end gap-4 mb-9">
               <span className="font-bold text-sm">Budget: </span>
               <span className="text-gray-400">
@@ -147,28 +162,48 @@ const MovieDetails = () => {
               </span>
             </div>
           )} */}
-            {movieDetail.production_companies && (
-              <div className="flex flex-col gap-4 mb-7">
-                <span className="font-bold text-sm">
-                  Production Companies:{" "}
-                </span>
-                <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
-                  {movieDetail.production_companies.map((pc) => (
-                    <span className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
-                      {pc.name}
-                    </span>
-                  ))}
+                  {movieDetail.production_companies && (
+                    <div className="flex flex-col gap-4 mb-10">
+                      <span className="font-bold text-sm">
+                        Production Companies:{" "}
+                      </span>
+                      <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
+                        {movieDetail.production_companies.map((pc) => (
+                          <span className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
+                            {pc.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
-            )}
+            </div>
             {movieDetail.overview && (
-              <div className="flex flex-col gap-4 mb-9">
+              <div className="flex flex-col gap-1 mb-9 md:w-[70%]">
                 <span className="font-bold text-lg block">Synopsis: </span>
-                <span className="text-gray-400 text-sm">
+                <span className="text-gray-400 text-sm leading-6">
                   {movieDetail.overview}
                 </span>
               </div>
             )}
+          </div>
+        </div>
+        <div className="lg:basis-[30%]">
+          <div className="font-Heavy uppercase text-xl sm:text-2xl font-bold border-l-8 border-l-red-600 pl-2 mt-10">
+            Recommended
+          </div>
+          <div className="">
+            {recommended.map((recommend) => (
+              <div className="flex">
+                <img
+                  src={imgBase + recommend.poster_path}
+                  alt=""
+                  className="w-[10rem] shadow-lg rounded-md"
+                />
+                <div className="">{recommend.title}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
