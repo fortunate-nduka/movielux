@@ -20,6 +20,7 @@ const MovieDetails = () => {
     recommended,
     setRecommended,
   } = useContext(DataContext);
+  const recommendedSlice = recommended.slice(0,8)
   const { id } = useParams();
   const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -65,6 +66,18 @@ const MovieDetails = () => {
     case "nl":
       lang = "Dutch";
       break;
+    case "es":
+      lang = "Spanish";
+      break;
+    case "de":
+      lang = "Deutsch";
+      break;
+    case "pl":
+      lang = "Polish";
+      break;
+    case "fr":
+      lang = "French";
+      break;
     default:
       lang = movieDetail.original_language;
       break;
@@ -83,17 +96,17 @@ const MovieDetails = () => {
   ) : (
     <div>
       <Header />
-      <div className="container px-6 flex flex-col lg:flex-row">
-        <div className="lg:basis-[70%]">
+      <div className="container mx-auto px-6 flex flex-col lg:flex-row gap-x-5">
+        <div className="lg:basis-[74%]">
           <div className="">
-            <div className="md:flex items-start gap-5">
+            <div className="md:flex items-start gap-8">
               <img
                 src={imgBase + movieDetail.poster_path}
                 alt=""
-                className="mt-4 md:mt-10 mb-5 w-[17rem] rounded-lg shadow-lg"
+                className="mt-4 md:mt-8 mb-5 w-[17rem] md:w-[15rem] rounded-lg shadow-lg"
               />
               <div className="">
-                <div className="font-montBold text-2xl mt-7 mb-6">
+                <div className="font-montBold text-3xl mt-7 mb-6">
                   {movieDetail.title || movieDetail.name}
                 </div>
                 <div className="flex items-center gap-6 mb-8">
@@ -180,7 +193,7 @@ const MovieDetails = () => {
               </div>
             </div>
             {movieDetail.overview && (
-              <div className="flex flex-col gap-1 mb-9 md:w-[70%]">
+              <div className="flex flex-col gap-1 mb-9 xl:w-[80%]">
                 <span className="font-bold text-lg block">Synopsis: </span>
                 <span className="text-gray-400 text-sm leading-6">
                   {movieDetail.overview}
@@ -189,17 +202,17 @@ const MovieDetails = () => {
             )}
           </div>
         </div>
-        <div className="lg:basis-[30%]">
-          <div className="font-Heavy uppercase text-xl sm:text-2xl font-bold border-l-8 border-l-red-600 pl-2 mt-10">
+        <div className="lg:basis-[26%]">
+          <div className="font-Heavy uppercase text-xl sm:text-lg font-bold border-l-8 border-l-red-600 pl-2 mt-10">
             Recommended
           </div>
-          <div className="">
-            {recommended.map((recommend) => (
-              <div className="flex">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
+            {recommendedSlice.map((recommend) => (
+              <div className="flex flex-col">
                 <img
-                  src={imgBase + recommend.poster_path}
+                  src={imgBase + recommend.backdrop_path}
                   alt=""
-                  className="w-[10rem] shadow-lg rounded-md"
+                  className="w-full shadow-lg"
                 />
                 <div className="">{recommend.title}</div>
               </div>

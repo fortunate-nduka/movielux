@@ -52,14 +52,26 @@ const CarouselThumb = ({
     case "es":
       lang = "Spanish";
       break;
+    case "de":
+      lang = "Deutsch";
+      break;
+    case "pl":
+      lang = "Polish";
+      break;
+    case "fr":
+      lang = "French";
+      break;
     default:
       lang = original_language;
       break;
   }
 
   return (
-  <div className="relative">
-    <div style={{ background: `url(${overlay})` }} className="absolute top-0 left-0 right-0 bottom-0 opacity-[0.06]"></div>
+    <div className="relative">
+      <div
+        style={{ background: `url(${overlay})` }}
+        className="absolute top-0 left-0 right-0 bottom-0 opacity-[0.06]"
+      ></div>
       <div
         style={style}
         className="w-full bg-cover bg-center bg-no-repeat min-h-screen md:h-full"
@@ -98,7 +110,7 @@ const CarouselThumb = ({
                 : overview}
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center text-center gap-y-7 md:gap-y-0 md:gap-x-5 w-fit">
-              <Link to="/">
+              <Link to={`/movie/${id}`}>
                 <button className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center cursor-pointer w-fit shadow-lg">
                   More Information <BsArrowRight className="ml-2 text-sm" />
                 </button>
