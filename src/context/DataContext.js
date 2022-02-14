@@ -9,6 +9,8 @@ export const DataProvider = ({ children }) => {
   const [genre, setGenre] = useState(28);
   const [movieDetail, setMovieDetail] = useState({});
   const [recommended, setRecommended] = useState([]);
+  const [cast, setCast] = useState([]);
+  const [crew, setCrew] = useState([]);
 
   return (
     <DataContext.Provider
@@ -25,6 +27,10 @@ export const DataProvider = ({ children }) => {
         setPage,
         genre,
         setGenre,
+        cast,
+        setCast,
+        crew,
+        setCrew,
       }}
     >
       {children}
