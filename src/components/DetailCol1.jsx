@@ -61,24 +61,24 @@ const DetailCol1 = () => {
     <div className="lg:basis-[60%]">
       <iframe
         width="100%"
-        height="315"
+        height="350"
         src="https://www.youtube.com/embed/_RjeC6Q8pG8"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       />
-      <div className="mt-12">
-        <div className="font-poppins font-bold text-3xl mt-7 mb-6">
+      <div className="mt-4">
+        <div className="font-poppins font-black text-2xl md:text-3xl mb-6">
           {movieDetail.title || movieDetail.name}
         </div>
-        <div className="flex items-center gap-6 mb-8">
+        <div className="flex items-center justify-between sm:justify-start sm:gap-x-8 mb-8">
           <div style={{ width: 50, height: 50 }} className="">
             <CircularProgressbar
               value={movieDetail.vote_average}
               maxValue={10}
               text={`${movieDetail.vote_average / 1}`}
-              strokeWidth={7}
+              strokeWidth={10}
               background
               backgroundPadding={6}
               styles={buildStyles({
@@ -105,9 +105,9 @@ const DetailCol1 = () => {
           <div className="flex items-end gap-4 mb-10">
             <span className="font-bold">Parental Guidance: </span>
             {movieDetail.adult === true ? (
-              <span className="text-gray-400 font-bold text-[red]">YES</span>
+              <span className="font-bold text-[red]">YES</span>
             ) : (
-              <span className="text-gray-400 font-bold text-[#ffff00]">NO</span>
+              <span className="font-bold text-[#ffff00]">NO</span>
             )}
           </div>
           {movieDetail.original_language && (
@@ -153,7 +153,7 @@ const DetailCol1 = () => {
       )}
       <div className="mt-16 lg:mt-10">
         <div className="flex items-center justify-between mb-5">
-          <div className="font-Heavy uppercase text-lg md:text-x2xl font-bold border-l-8 border-l-red-600 pl-2">
+          <div className="font-poppins uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2">
             Casts
           </div>
           <div className="">
