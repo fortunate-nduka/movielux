@@ -88,7 +88,7 @@ const CarouselThumb = ({
           </div>
           <div className="px-4 mb-10 lg:basis-3/5">
             <Moment date={dateToFormat} fromNow className="text-gray-300" />
-            <div className="font-montBlack text-3xl md:text-4xl font-bold mt-4 md:mt-5 w-full">
+            <div className="font-poppins text-3xl md:text-4xl font-bold mt-4 md:mt-5 w-full">
               {title || name}
             </div>
             <div className="flex items-center my-5 md:my-6 lg:my-7">

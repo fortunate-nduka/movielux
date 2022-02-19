@@ -20,7 +20,7 @@ const DetailCol1 = () => {
   const time_convert = (num) => {
     let hours = Math.floor(num / 60);
     let minutes = num % 60;
-    return hours + "hours : " + minutes + "minutes";
+    return hours + " hours : " + minutes + " minutes";
   };
 
   let lang = "";
@@ -68,8 +68,8 @@ const DetailCol1 = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       />
-      <div className="">
-        <div className="font-black text-3xl mt-7 mb-6">
+      <div className="mt-12">
+        <div className="font-poppins font-bold text-3xl mt-7 mb-6">
           {movieDetail.title || movieDetail.name}
         </div>
         <div className="flex items-center gap-6 mb-8">
@@ -96,29 +96,29 @@ const DetailCol1 = () => {
         <div className="">
           {movieDetail.tagline && (
             <div className="flex items-end gap-4 mb-10">
-              <span className="font-bold text-sm">Tagline: </span>
+              <span className="font-bold">Tagline: </span>
               <span className="text-gray-400 italic">
                 {movieDetail.tagline}
               </span>
             </div>
           )}
           <div className="flex items-end gap-4 mb-10">
-            <span className="font-bold text-sm">Parental Guidance: </span>
+            <span className="font-bold">Parental Guidance: </span>
             {movieDetail.adult === true ? (
-              <span className="text-gray-400 font-bold">YES</span>
+              <span className="text-gray-400 font-bold text-[red]">YES</span>
             ) : (
-              <span className="text-gray-400 font-bold">NO</span>
+              <span className="text-gray-400 font-bold text-[#ffff00]">NO</span>
             )}
           </div>
           {movieDetail.original_language && (
             <div className="flex items-end gap-4 mb-10">
-              <span className="font-bold text-sm">Language: </span>
+              <span className="font-bold">Language: </span>
               <span className="text-gray-400">{lang}</span>
             </div>
           )}
           {movieDetail.genres && (
             <div className="flex flex-col gap-4 mb-10">
-              <span className="font-bold text-sm">Genres: </span>
+              <span className="font-bold">Genres: </span>
               <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
                 {movieDetail.genres.map((genre) => (
                   <span className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
@@ -130,7 +130,7 @@ const DetailCol1 = () => {
           )}
           {movieDetail.production_companies && (
             <div className="flex flex-col gap-4 mb-10">
-              <span className="font-bold text-sm">Production Companies: </span>
+              <span className="font-bold">Production Companies: </span>
               <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
                 {movieDetail.production_companies.map((pc) => (
                   <span className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
@@ -145,8 +145,8 @@ const DetailCol1 = () => {
 
       {movieDetail.overview && (
         <div className="flex flex-col gap-1 mb-9 xl:w-[80%]">
-          <span className="font-bold text-lg block">Synopsis: </span>
-          <span className="text-gray-400 text-sm leading-6">
+          <span className="font-bold block">Description: </span>
+          <span className="text-gray-400 leading-6">
             {movieDetail.overview}
           </span>
         </div>

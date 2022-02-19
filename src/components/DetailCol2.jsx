@@ -12,8 +12,8 @@ const DetailCol2 = () => {
   const recommendedSlice = recommended.slice(0, 8);
 
   return (
-    <div className="lg:basis-[25%] mt-16">
-      <div className="font-Heavy uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2 mt-14 lg:mt-10 mb-5">
+    <div className="lg:basis-[25%] lg:mt-0 mt-16">
+      <div className="font-poppins uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2 mb-7">
         Recommended
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-x-5 gap-y-10 md:gap-y-7 grid-">
@@ -24,17 +24,14 @@ const DetailCol2 = () => {
                 <img
                   src={imgBase + recommend.backdrop_path}
                   alt=""
-                  className="w-full shadow-lg"
+                  className="w-full shadow-lg rounded-lg"
                 />
               ) : (
                 <img src={not_available} alt="" className="w-full shadow-lg" />
               )}
               <div className="mt-3 flex items-center justify-between">
-                <div className="">
-                  <div
-                    className="text-sm font-bold
-                  "
-                  >
+                <div className="w-full">
+                  <div className="text-base font-semibold truncate ... tracking-wider mt-1 mb-[2px] px-1 w-auto">
                     {recommend.title}
                   </div>
                   <Moment

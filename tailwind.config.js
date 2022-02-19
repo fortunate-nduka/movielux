@@ -9,6 +9,7 @@ module.exports = {
         montBold: ["montBold", "sans-serif"],
         montRegular: ["montRegular", "sans-serif"],
         montLight: ["montLight", "sans-serif"],
+        poppins: ["poppins", "sans-serif"],
       },
       colors: {
         black3: "rgba(0,0,0,.3)",

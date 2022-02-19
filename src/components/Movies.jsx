@@ -144,7 +144,7 @@ const Movies = () => {
                   })}
                 />
               </div>
-              <div className="text-base font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-5 mb-[2px] px-1">
+              <div className="text-base font-poppins font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-5 mb-[2px] px-1">
                 {movie.title}
               </div>
               <Moment
