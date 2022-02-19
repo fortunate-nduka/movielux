@@ -68,7 +68,7 @@ const DetailCol1 = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       />
-      <div className="mt-4">
+      <div className="mt-10">
         <div className="font-poppins font-black text-2xl md:text-3xl mb-6">
           {movieDetail.title || movieDetail.name}
         </div>

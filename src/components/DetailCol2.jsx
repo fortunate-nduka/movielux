@@ -41,7 +41,7 @@ const DetailCol2 = () => {
                   />
                 </div>
                 <div
-                  style={{ width: 45, height: 45 }}
+                  style={{ width: 50, height: 50 }}
                   className="-translate-y-10 mr-2"
                 >
                   <CircularProgressbar
