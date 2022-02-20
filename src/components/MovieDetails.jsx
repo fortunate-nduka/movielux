@@ -36,19 +36,14 @@ const MovieDetails = () => {
       const movieCredit = await axios(
         `${baseUrl}/movie/${id}/credits?${endUrl}`
       );
-      const movieCreditRes = movieCredit.data;
       setRecommended(recommended.data.results);
-      console.log(movieDetailRes.data);
-      console.log(movieCreditRes.cast);
-      console.log(movieCreditRes.crew);
-      setCrew(movieCreditRes.crew);
-      setCast(movieCreditRes.cast);
-      setTimeout(() => {
-        setMovieDetail(movieDetailRes.data);
-        setLoading(false);
-      }, 1000);
+      setCrew(movieCredit.data.crew);
+      setCast(movieCredit.data.cast);
+      setMovieDetail(movieDetailRes.data);
     } catch (err) {
       console.log(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 

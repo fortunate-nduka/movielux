@@ -67,7 +67,7 @@ const DetailCol1 = () => {
   return (
     <div className="lg:w-[60%]">
       <div className="relative">
-        <Slider
+        {/* <Slider
           ref={sliderRef}
           fade={true}
           arrows={false}
@@ -81,7 +81,7 @@ const DetailCol1 = () => {
               controls={true}
             />
           ))}
-        </Slider>
+        </Slider> */}
         <div className="absolute right-3 bottom-1 mt-10  translate-y-8  md:translate-y-10 space-x-2">
           <button className="border-2 border-white rounded-full p-1 shadow-lg">
             <BsArrowLeft fontSize={13} onClick={handlePrev} />
