@@ -76,8 +76,9 @@ const DetailCol1 = () => {
         >
           {movieDetail.videos.results.slice(0, 3).map((video) => (
             <ReactPlayer
-              url={`https://www.youtube.com/embed/${video.key}`}
+              url={`https://www.youtube.com/watch?v=` + video.key}
               width="100%"
+              controls={true}
             />
           ))}
         </Slider>

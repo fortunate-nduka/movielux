@@ -24,14 +24,14 @@ const DetailCol2 = () => {
                 <img
                   src={imgBase + recommend.backdrop_path}
                   alt=""
-                  className="w-full shadow-lg"
+                  className="w-full shadow-lg rounded-md"
                 />
               ) : (
                 <img src={not_available} alt="" className="w-full shadow-lg" />
               )}
               <div className="mt-3 flex items-center justify-between">
                 <div className="w-full">
-                  <div className="text-base font-semibold truncate ... tracking-wider mt-1 mb-[2px] pl-1 w-auto">
+                  <div className="text-base font-poppins font-bold truncate ... tracking-wider mt-1 mb-[2px] pl-1 w-auto">
                     {recommend.title}
                   </div>
                   <Moment

@@ -74,30 +74,34 @@ export const MovieCredits = () => {
           </div>
         </div>
         <Slider ref={castSliderRef} {...settings}>
-          {cast.map((c) => (
-            <div className="px-2">
-              <img
-                src={imgBase + c.profile_path}
-                alt=""
-                className="w-[15rem]"
-              />
-              <div className="space-y-1 mt-2 pl-1 text-xs">
-                <div className="">
-                  Name:{" "}
-                  <span className="text-gray-400 italic">
-                    {c.name || c.original_name}{" "}
-                    {c.gender === 1
-                      ? "- Female"
-                      : c.gender === 2
-                      ? "- Male"
-                      : ""}
-                  </span>
-                </div>
-                <div className="">
-                  Character:{" "}
-                  <span className="text-gray-400 italic">{c.character}</span>
-                </div>
-                {/* <div style={{ display: "flex", width: "100%" }}>
+          {cast.map(
+            (c) =>
+              c.profile_path && (
+                <div className="px-2">
+                  <img
+                    src={imgBase + c.profile_path}
+                    alt=""
+                    className="w-20rem sm:w-[15rem] shadow-lg rounded-md"
+                  />
+                  <div className="space-y-1 mt-2 pl-1 text-xs">
+                    <div className="">
+                      Name:{" "}
+                      <span className="text-gray-400 italic">
+                        {c.name || c.original_name}{" "}
+                        {c.gender === 1
+                          ? "- Female"
+                          : c.gender === 2
+                          ? "- Male"
+                          : ""}
+                      </span>
+                    </div>
+                    <div className="">
+                      Character:{" "}
+                      <span className="text-gray-400 italic">
+                        {c.character}
+                      </span>
+                    </div>
+                    {/* <div style={{ display: "flex", width: "100%" }}>
                   <Rating
                     className="react-simple-star-rating"
                     style={{"display":"flex"}}
@@ -107,9 +111,10 @@ export const MovieCredits = () => {
                     ratingValue={rating}
                   />
                 </div> */}
-              </div>
-            </div>
-          ))}
+                  </div>
+                </div>
+              )
+          )}
         </Slider>
       </div>
 
@@ -128,34 +133,37 @@ export const MovieCredits = () => {
           </div>
         </div>
         <Slider ref={crewSliderRef} {...settings}>
-          {crew.map((c) => (
-            <div className="px-2">
-              <img
-                src={imgBase + c.profile_path}
-                alt=""
-                className="w-[15rem]"
-              />
-              <div className="space-y-1 mt-2 pl-1 text-xs">
-                <div className="">
-                  Name:{" "}
-                  <span className="text-gray-400 italic">
-                    {c.name || c.original_name}{" "}
-                    {c.gender === 1
-                      ? "- Female"
-                      : c.gender === 2
-                      ? "- Male"
-                      : ""}
-                  </span>
+          {crew.map(
+            (c) =>
+              c.profile_path && (
+                <div className="px-2">
+                  <img
+                    src={imgBase + c.profile_path}
+                    alt=""
+                    className="w-20rem sm:w-[15rem] shadow-lg rounded-md"
+                  />
+                  <div className="space-y-1 mt-2 pl-1 text-xs">
+                    <div className="">
+                      Name:{" "}
+                      <span className="text-gray-400 italic">
+                        {c.name || c.original_name}{" "}
+                        {c.gender === 1
+                          ? "- Female"
+                          : c.gender === 2
+                          ? "- Male"
+                          : ""}
+                      </span>
+                    </div>
+                    <div className="">
+                      Department:{" "}
+                      <span className="text-gray-400 italic">
+                        {c.known_for_department}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className="">
-                  Department:{" "}
-                  <span className="text-gray-400 italic">
-                    {c.known_for_department}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
+              )
+          )}
         </Slider>
       </div>
     </Fragment>
