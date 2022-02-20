@@ -92,12 +92,12 @@ const CarouselThumb = ({
               {title || name}
             </div>
             <div className="flex items-center my-5 md:my-6 lg:my-7">
-              <span className="flex items-center text-gray-300">
+              <span className="flex items-start text-gray-300">
                 <AiFillStar className="mr-1 text-[yellow] text-sm md:text-lg" />
                 {vote_average}
               </span>
               <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-4 md:mx-5"></div>
-              <span className="flex items-center text-gray-300">
+              <span className="flex items-start text-gray-300">
                 <FaThumbsUp className="mr-1 text-[#ff3030] text-sm md:text-lg" />
                 {millify(vote_count)}
               </span>

@@ -1,19 +1,19 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import DataContext from "../context/DataContext";
-import { BsArrowRight } from "react-icons/bs";
-import { BsArrowLeft } from "react-icons/bs";
 import Moment from "react-moment";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import ReactPlayer from "react-player";
+import { MovieCredits } from "./MovieCredits";
+import { BsArrowRight } from "react-icons/bs";
+import { BsArrowLeft } from "react-icons/bs";
+import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 const DetailCol1 = () => {
-  const {
-    movieDetail,
-    // setLoading,
-    // setCast,
-    // crew,
-    // setCrew,
-  } = useContext(DataContext);
+  const { movieDetail } = useContext(DataContext);
+  const sliderRef = useRef(null);
 
   const dateToFormat = movieDetail.release_date || movieDetail.first_air_date;
 
@@ -57,17 +57,39 @@ const DetailCol1 = () => {
       break;
   }
 
+  const handlePrev = () => {
+    sliderRef.current.slickPrev();
+  };
+  const handleNext = () => {
+    sliderRef.current.slickNext();
+  };
+
   return (
-    <div className="lg:basis-[60%]">
-      <iframe
-        width="100%"
-        height="350"
-        src="https://www.youtube.com/embed/_RjeC6Q8pG8"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      />
+    <div className="lg:w-[60%]">
+      <div className="relative">
+        <Slider
+          ref={sliderRef}
+          fade={true}
+          arrows={false}
+          autoplay={false}
+          autoplaySpeed={6000}
+        >
+          {movieDetail.videos.results.slice(0, 3).map((video) => (
+            <ReactPlayer
+              url={`https://www.youtube.com/embed/${video.key}`}
+              width="100%"
+            />
+          ))}
+        </Slider>
+        <div className="absolute right-3 bottom-1 mt-10  translate-y-8  md:translate-y-10 space-x-2">
+          <button className="border-2 border-white rounded-full p-1 shadow-lg">
+            <BsArrowLeft fontSize={13} onClick={handlePrev} />
+          </button>
+          <button className="border-2 border-white rounded-full p-1 shadow-lg">
+            <BsArrowRight fontSize={13} onClick={handleNext} />
+          </button>
+        </div>
+      </div>
       <div className="mt-10">
         <div className="font-poppins font-black text-2xl md:text-3xl mb-6">
           {movieDetail.title || movieDetail.name}
@@ -105,9 +127,9 @@ const DetailCol1 = () => {
           <div className="flex items-end gap-4 mb-10">
             <span className="font-bold">Parental Guidance: </span>
             {movieDetail.adult === true ? (
-              <span className="font-bold text-[red]">YES</span>
+              <span className="font-bold">YES</span>
             ) : (
-              <span className="font-bold text-[#ffff00]">NO</span>
+              <span className="font-bold">NO</span>
             )}
           </div>
           {movieDetail.original_language && (
@@ -144,39 +166,14 @@ const DetailCol1 = () => {
       </div>
 
       {movieDetail.overview && (
-        <div className="flex flex-col gap-1 mb-9 xl:w-[80%]">
+        <div className="flex flex-col gap-1 mb-9 w-full">
           <span className="font-bold block">Description: </span>
           <span className="text-gray-400 leading-6">
             {movieDetail.overview}
           </span>
         </div>
       )}
-      <div className="mt-16 lg:mt-10">
-        <div className="flex items-center justify-between mb-5">
-          <div className="font-poppins uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2">
-            Casts
-          </div>
-          <div className="">
-            <button className="border border-white rounded-full p-2 mr-3 shadow-lg">
-              <BsArrowLeft fontSize={15} />
-            </button>
-            <button className="border border-white rounded-full p-2 shadow-lg">
-              <BsArrowRight fontSize={15} />
-            </button>
-          </div>
-        </div>
-        {/* <Slider {...settings}>
-                {cast.map((c) => (
-                  <div>
-                    <img
-                      src={imgBase + c.profile_path}
-                      alt=""
-                      className="w-[15rem]"
-                    />
-                  </div>
-                ))}
-              </Slider> */}
-      </div>
+      <MovieCredits />
     </div>
   );
 };

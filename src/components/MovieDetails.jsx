@@ -17,13 +17,12 @@ const MovieDetails = () => {
     loading,
     setRecommended,
     setCast,
-    // crew,
     setCrew,
   } = useContext(DataContext);
 
   const { id } = useParams();
   const API_KEY = process.env.REACT_APP_API_KEY;
-  const endUrl = `api_key=${API_KEY}&language=en-US`;
+  const endUrl = `api_key=${API_KEY}`;
 
   const fetchMovieDetail = async () => {
     try {
@@ -39,9 +38,11 @@ const MovieDetails = () => {
       );
       const movieCreditRes = movieCredit.data;
       setRecommended(recommended.data.results);
-      setCast(movieCreditRes.cast);
+      console.log(movieDetailRes.data);
       console.log(movieCreditRes.cast);
+      console.log(movieCreditRes.crew);
       setCrew(movieCreditRes.crew);
+      setCast(movieCreditRes.cast);
       setTimeout(() => {
         setMovieDetail(movieDetailRes.data);
         setLoading(false);
@@ -61,7 +62,7 @@ const MovieDetails = () => {
   ) : (
     <div>
       <Header />
-      <div className="container mx-auto px-6 flex flex-col lg:flex-row lg:justify-between pt-5">
+      <div className="container mx-auto px-4 flex flex-col lg:flex-row lg:justify-between pt-5">
         <DetailCol1 />
         <DetailCol2 />
       </div>

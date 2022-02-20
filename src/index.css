@@ -42,4 +42,10 @@
     transform: translate(-0.1px, 0.2rem) rotate(5deg);
     animation: flicker 2s ease-in-out infinite alternate;
   }
+  .react-simple-star-rating {
+    display: flex !important;
+  }
+  .filled-icons {
+    display: flex !important;
+  }
 }
