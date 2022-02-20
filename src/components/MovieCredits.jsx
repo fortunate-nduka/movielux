@@ -1,14 +1,14 @@
-import { Fragment, useContext, useRef, useState } from "react";
+import { Fragment, useContext, useRef } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
-import { Rating } from "react-simple-star-rating";
+// import { Rating } from "react-simple-star-rating";
 import Slider from "react-slick";
 import DataContext from "../context/DataContext";
 import { imgBase } from "../utils/requests";
 
 export const MovieCredits = () => {
   const { cast, crew } = useContext(DataContext);
-  const [rating, setRating] = useState(100);
+  // const [rating, setRating] = useState(100);
   const castSliderRef = useRef(null);
   const crewSliderRef = useRef(null);
 
@@ -97,7 +97,7 @@ export const MovieCredits = () => {
                   Character:{" "}
                   <span className="text-gray-400 italic">{c.character}</span>
                 </div>
-                <div style={{ display: "flex", width: "100%" }}>
+                {/* <div style={{ display: "flex", width: "100%" }}>
                   <Rating
                     className="react-simple-star-rating"
                     style={{"display":"flex"}}
@@ -106,7 +106,7 @@ export const MovieCredits = () => {
                     readonly={true}
                     ratingValue={rating}
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
