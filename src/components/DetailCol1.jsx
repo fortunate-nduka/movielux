@@ -3,11 +3,11 @@ import DataContext from "../context/DataContext";
 import Moment from "react-moment";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
 import { MovieCredits } from "./MovieCredits";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
