@@ -34,7 +34,7 @@ const Carousel = () => {
       arrows={false}
       autoplay={true}
       autoplaySpeed={5000}
-      speed={3000}
+      speed={500}
     >
       {trends.map((trend) => (
         <CarouselThumb
