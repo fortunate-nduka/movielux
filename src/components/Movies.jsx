@@ -140,11 +140,11 @@ const Movies = () => {
                     textColor: "#fff",
                     pathColor: "#ff3030",
                     trailColor: "transparent",
-                    textSize: "30px",
+                    textSize: "27px",
                   })}
                 />
               </div>
-              <div className="text-base font-poppins font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-5 mb-[2px] px-1">
+              <div className="text-[18px] font-poppins font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-5 mb-[2px] px-1">
                 {movie.title}
               </div>
               <Moment
