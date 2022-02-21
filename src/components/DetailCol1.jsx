@@ -3,7 +3,7 @@ import DataContext from "../context/DataContext";
 import Moment from "react-moment";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
 import { MovieCredits } from "./MovieCredits";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
@@ -70,16 +70,18 @@ const DetailCol1 = () => {
         {movieDetail.videos && (
           <Slider
             ref={sliderRef}
-            fade={true}
+            fade={false}
             arrows={false}
             autoplay={false}
             draggable={false}
+            swipe={false}
           >
             {movieDetail.videos.results.slice(0, 3).map((video) => (
               <ReactPlayer
                 url={`https://www.youtube.com/watch?v=${video.key}`}
                 width="100%"
                 controls={true}
+                light={true}
               />
             ))}
           </Slider>

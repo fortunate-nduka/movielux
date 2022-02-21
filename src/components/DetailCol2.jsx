@@ -9,14 +9,14 @@ import not_available from "../assets/Not_Available.png";
 
 const DetailCol2 = () => {
   const { recommended } = useContext(DataContext);
-  const recommendedSlice = recommended.slice(0, 8);
+  const recommendedSlice = recommended.slice(0, 6);
 
   return (
     <div className="lg:w-[30%] lg:mt-0 mt-16">
       <div className="font-poppins uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2 mb-10">
         Recommended
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-x-5 gap-y-10 md:gap-y-7 grid-">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-x-5 gap-y-10 md:gap-y-7 grid-">
         {recommendedSlice.map((recommend) => (
           <Link to={`/movie/${recommend.id}`} key={recommend.id}>
             <div className="flex flex-col cursor-pointer relative">
@@ -42,7 +42,7 @@ const DetailCol2 = () => {
                 </div>
                 <div
                   style={{ width: 45, height: 45 }}
-                  className="absolute top-0 right-3 -translate-y-5"
+                  className="absolute top-1 right-1 font-poppins font-semibold"
                 >
                   <CircularProgressbar
                     value={recommend.vote_average}

@@ -125,8 +125,8 @@ const Movies = () => {
             )}
             <div className="relative">
               <div
-                style={{ width: 50, height: 50 }}
-                className="absolute right-3 -translate-y-7 ml-3"
+                style={{ width: 46, height: 46 }}
+                className="absolute right-3 -translate-y-7 ml-3 font-poppins font-semibold"
               >
                 <CircularProgressbar
                   value={movie.vote_average}
