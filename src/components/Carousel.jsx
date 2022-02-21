@@ -29,15 +29,17 @@ const Carousel = () => {
   return (
     <Slider
       ref={sliderRef}
-      adaptiveHeight={true}
-      fade={true}
+      adaptiveHeight={false}
+      fade={false}
       arrows={false}
       autoplay={true}
-      autoplaySpeed={6000}
+      autoplaySpeed={5000}
+      speed={3000}
     >
       {trends.map((trend) => (
         <CarouselThumb
           key={trend.id}
+          movieId={trend.id}
           {...trend}
           handleNext={handleNext}
           handlePrev={handlePrev}

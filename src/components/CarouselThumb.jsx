@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import overlay from "../assets/bg-noise.gif";
 
 const CarouselThumb = ({
-  id,
+  movieId,
   title,
   name,
   backdrop_path,
@@ -25,6 +25,7 @@ const CarouselThumb = ({
   handleNext,
   handlePrev,
 }) => {
+  console.log(movieId);
   const style = {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1)),url(${
       imgBase + backdrop_path
@@ -110,7 +111,7 @@ const CarouselThumb = ({
                 : overview}
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center text-center gap-y-7 md:gap-y-0 md:gap-x-5 w-fit">
-              <Link to={`/movie/${id}`}>
+              <Link to={`/movie/${movieId}`}>
                 <button className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center cursor-pointer w-fit shadow-lg">
                   More Information <BsArrowRight className="ml-2 text-sm" />
                 </button>
