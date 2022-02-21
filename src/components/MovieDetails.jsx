@@ -40,6 +40,7 @@ const MovieDetails = () => {
       setCrew(movieCredit.data.crew);
       setCast(movieCredit.data.cast);
       setMovieDetail(movieDetailRes.data);
+      console.log(movieDetailRes.data)
     } catch (err) {
       console.log(err.message);
     } finally {

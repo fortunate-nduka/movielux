@@ -68,32 +68,35 @@ const DetailCol1 = () => {
     <div className="lg:w-[60%]">
       <div className="relative">
         {movieDetail.videos && (
-          <Slider
-            ref={sliderRef}
-            fade={false}
-            arrows={false}
-            autoplay={false}
-            draggable={false}
-            swipe={false}
-          >
-            {movieDetail.videos.results.slice(0, 3).map((video) => (
-              <ReactPlayer
-                url={`https://www.youtube.com/watch?v=${video.key}`}
-                width="100%"
-                controls={true}
-                light={true}
-              />
-            ))}
-          </Slider>
+          <>
+            <Slider
+              ref={sliderRef}
+              fade={false}
+              arrows={false}
+              autoplay={false}
+              draggable={false}
+              swipe={false}
+            >
+              {movieDetail.videos.results.slice(0, 3).map((video) => (
+                <ReactPlayer
+                  url={`https://www.youtube.com/watch?v=${video.key}`}
+                  width="100%"
+                  controls={true}
+                />
+              ))}
+            </Slider>
+            {movieDetail.videos.results.length > 1 && (
+              <div className="absolute right-3 bottom-1 mt-10  translate-y-8  md:translate-y-10 space-x-2">
+                <button className="border-2 border-white rounded-full p-1 shadow-lg">
+                  <BsArrowLeft fontSize={13} onClick={handlePrev} />
+                </button>
+                <button className="border-2 border-white rounded-full p-1 shadow-lg">
+                  <BsArrowRight fontSize={13} onClick={handleNext} />
+                </button>
+              </div>
+            )}
+          </>
         )}
-        <div className="absolute right-3 bottom-1 mt-10  translate-y-8  md:translate-y-10 space-x-2">
-          <button className="border-2 border-white rounded-full p-1 shadow-lg">
-            <BsArrowLeft fontSize={13} onClick={handlePrev} />
-          </button>
-          <button className="border-2 border-white rounded-full p-1 shadow-lg">
-            <BsArrowRight fontSize={13} onClick={handleNext} />
-          </button>
-        </div>
       </div>
       <div className="mt-10">
         <div className="font-poppins font-black text-2xl md:text-3xl mb-6">

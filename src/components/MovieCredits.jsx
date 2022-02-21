@@ -87,9 +87,9 @@ export const MovieCredits = () => {
                       className="w-20rem sm:w-[15rem] shadow-lg rounded-md"
                     />
                     <div className="space-y-1 mt-2 pl-1 text-[13px] md:text-xs">
-                      <div className="">
+                      <div className="font-bold">
                         Name:{" "}
-                        <span className="text-gray-400 italic">
+                        <span className="text-gray-400 font-normal">
                           {c.name || c.original_name}{" "}
                           {c.gender === 1
                             ? "- Female"
@@ -98,9 +98,9 @@ export const MovieCredits = () => {
                             : ""}
                         </span>
                       </div>
-                      <div className="">
+                      <div className="font-bold">
                         Character:{" "}
-                        <span className="text-gray-400 italic">
+                        <span className="text-gray-400 font-normal">
                           {c.character}
                         </span>
                       </div>
@@ -148,9 +148,9 @@ export const MovieCredits = () => {
                       className="w-20rem sm:w-[15rem] shadow-lg rounded-md"
                     />
                     <div className="space-y-1 mt-2 pl-1 text-sm md:text-xs">
-                      <div className="">
+                      <div className="font-bold">
                         Name:{" "}
-                        <span className="text-gray-400 italic">
+                        <span className="text-gray-400 font-normal">
                           {c.name || c.original_name}{" "}
                           {c.gender === 1
                             ? "- Female"
@@ -159,9 +159,9 @@ export const MovieCredits = () => {
                             : ""}
                         </span>
                       </div>
-                      <div className="">
+                      <div className="font-bold">
                         Department:{" "}
-                        <span className="text-gray-400 italic">
+                        <span className="text-gray-400 font-normal">
                           {c.known_for_department}
                         </span>
                       </div>
