@@ -3,11 +3,11 @@ import DataContext from "../context/DataContext";
 import Moment from "react-moment";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-// import ReactPlayer from "react-player";
+import ReactPlayer from "react-player";
 import { MovieCredits } from "./MovieCredits";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
-// import Slider from "react-slick";
+import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -67,21 +67,23 @@ const DetailCol1 = () => {
   return (
     <div className="lg:w-[60%]">
       <div className="relative">
-        {/* <Slider
-          ref={sliderRef}
-          fade={true}
-          arrows={false}
-          autoplay={false}
-          autoplaySpeed={6000}
-        >
-          {movieDetail.videos.results.slice(0, 3).map((video) => (
-            <ReactPlayer
-              url={`https://www.youtube.com/watch?v=` + video.key}
-              width="100%"
-              controls={true}
-            />
-          ))}
-        </Slider> */}
+        {movieDetail.videos && (
+          <Slider
+            ref={sliderRef}
+            fade={true}
+            arrows={false}
+            autoplay={false}
+            draggable={false}
+          >
+            {movieDetail.videos.results.slice(0, 3).map((video) => (
+              <ReactPlayer
+                url={`https://www.youtube.com/watch?v=${video.key}`}
+                width="100%"
+                controls={true}
+              />
+            ))}
+          </Slider>
+        )}
         <div className="absolute right-3 bottom-1 mt-10  translate-y-8  md:translate-y-10 space-x-2">
           <button className="border-2 border-white rounded-full p-1 shadow-lg">
             <BsArrowLeft fontSize={13} onClick={handlePrev} />

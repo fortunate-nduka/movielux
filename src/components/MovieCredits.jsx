@@ -30,7 +30,9 @@ export const MovieCredits = () => {
     dots: false,
     infinite: false,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    // slidesToScroll: 3,
+    draggable: false,
+    swipe: false,
     // fade: true,
     responsive: [
       {
@@ -84,7 +86,7 @@ export const MovieCredits = () => {
                       alt=""
                       className="w-20rem sm:w-[15rem] shadow-lg rounded-md"
                     />
-                    <div className="space-y-1 mt-2 pl-1 md:text-xs">
+                    <div className="space-y-1 mt-2 pl-1 text-sm md:text-xs">
                       <div className="">
                         Name:{" "}
                         <span className="text-gray-400 italic">
