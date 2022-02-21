@@ -1,7 +1,5 @@
 import { Fragment } from "react";
-import Movies from "./Movies";
-import Carousel from "./Carousel";
-import Nav from "./Nav";
+import { Movies, Carousel, Nav } from "./index";
 import { Route, Routes } from "react-router-dom";
 
 const Home = () => {

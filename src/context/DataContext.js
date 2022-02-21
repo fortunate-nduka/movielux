@@ -9,8 +9,11 @@ export const DataProvider = ({ children }) => {
   const [genre, setGenre] = useState(28);
   const [movieDetail, setMovieDetail] = useState({});
   const [recommended, setRecommended] = useState([]);
+  const [similar, setSimilar] = useState([]);
   const [cast, setCast] = useState([]);
   const [crew, setCrew] = useState([]);
+  const [searchterm, setSearchterm] = useState("");
+  const [searchedMovies, setSearchedMovies] = useState([]);
 
   return (
     <DataContext.Provider
@@ -21,6 +24,8 @@ export const DataProvider = ({ children }) => {
         setMovieDetail,
         recommended,
         setRecommended,
+        similar,
+        setSimilar,
         loading,
         setLoading,
         page,
@@ -31,6 +36,10 @@ export const DataProvider = ({ children }) => {
         setCast,
         crew,
         setCrew,
+        searchterm,
+        setSearchterm,
+        searchedMovies,
+        setSearchedMovies,
       }}
     >
       {children}

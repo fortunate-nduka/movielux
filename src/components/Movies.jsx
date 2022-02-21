@@ -1,13 +1,10 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useEffect, useContext } from "react";
 import Moment from "react-moment";
 import DataContext from "../context/DataContext";
-import { imgBase } from "../utils/requests";
+import { imgBase, movieUrl } from "../utils/requests";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import PageControl from "./PageControl";
-import Loader from "./Loader";
-import { movieUrl } from "../utils/requests";
-import { useEffect } from "react";
+import { PageControl, Loader } from "./index";
 import axios from "axios";
 import no_image from "../assets/no_image.jpg";
 import { Link } from "react-router-dom";
@@ -92,7 +89,7 @@ const Movies = () => {
       genreName = "western";
       break;
     default:
-      genreName = 'movies';
+      genreName = "movies";
       break;
   }
 

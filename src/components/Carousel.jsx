@@ -2,9 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { trendingUrl } from "../utils/requests";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import CarouselThumb from "./CarouselThumb";
+
 
 const Carousel = () => {
   const [trends, setTrends] = useState([]);
@@ -39,7 +38,6 @@ const Carousel = () => {
       {trends.map((trend) => (
         <CarouselThumb
           key={trend.id}
-          movieId={trend.id}
           {...trend}
           handleNext={handleNext}
           handlePrev={handlePrev}

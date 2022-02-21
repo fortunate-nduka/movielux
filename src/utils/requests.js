@@ -5,6 +5,7 @@ export const baseUrl = "https://api.themoviedb.org/3";
 export const trendingUrl = `${baseUrl}/trending/all/day?api_key=${API_KEY}&language=em-US&append_to_response=videos`;
 export const movieUrl = `${baseUrl}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&with_genres=`;
 export const movieDetailUrl = `${baseUrl}/movie`;
+export const searchUrl = `${baseUrl}/search/movie?&api_key=${API_KEY}&sort_by=popularity.desc&query=`;
 
 export const genres = [
   { id: 28, name: "action" },

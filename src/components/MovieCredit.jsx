@@ -1,12 +1,11 @@
 import { Fragment, useContext, useRef } from "react";
-import { BsArrowRight } from "react-icons/bs";
-import { BsArrowLeft } from "react-icons/bs";
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 // import { Rating } from "react-simple-star-rating";
 import Slider from "react-slick";
 import DataContext from "../context/DataContext";
 import { imgBase } from "../utils/requests";
 
-export const MovieCredits = () => {
+const MovieCredit = () => {
   const { cast, crew } = useContext(DataContext);
   // const [rating, setRating] = useState(100);
   const castSliderRef = useRef(null);
@@ -61,7 +60,7 @@ export const MovieCredits = () => {
 
   return (
     <Fragment>
-      {cast && (
+      {cast.length > 1 && (
         <div className="mt-24">
           <div className="flex items-center justify-between mb-10">
             <div className="font-poppins uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2">
@@ -122,7 +121,7 @@ export const MovieCredits = () => {
         </div>
       )}
 
-      {crew && (
+      {crew.length > 1 && (
         <div className="mt-24">
           <div className="flex items-center justify-between mb-10">
             <div className="font-poppins uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2">
@@ -147,7 +146,7 @@ export const MovieCredits = () => {
                       alt=""
                       className="w-20rem sm:w-[15rem] shadow-lg rounded-md"
                     />
-                    <div className="space-y-1 mt-2 pl-1 text-sm md:text-xs">
+                    <div className="space-y-1 mt-2 pl-1 text-[13px] md:text-xs">
                       <div className="font-bold">
                         Name:{" "}
                         <span className="text-gray-400 font-normal">
@@ -175,3 +174,5 @@ export const MovieCredits = () => {
     </Fragment>
   );
 };
+
+export default MovieCredit;

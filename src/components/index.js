@@ -1,0 +1,13 @@
+export { default as Carousel } from "./Carousel";
+export { default as CarouselThumb } from "./CarouselThumb";
+export { default as DetailCol1 } from "./DetailCol1";
+export { default as DetailCol2 } from "./DetailCol2";
+export { default as Header } from "./Header";
+export { default as Home } from "./Home";
+export { default as Loader } from "./Loader";
+export { default as MovieCredit } from "./MovieCredit";
+export { default as MovieDetail } from "./MovieDetail";
+export { default as Movies } from "./Movies";
+export { default as Nav } from "./Nav";
+export { default as PageControl } from "./PageControl";
+export { default as Search } from "./Search";

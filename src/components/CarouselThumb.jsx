@@ -1,17 +1,15 @@
 import { imgBase } from "../utils/requests";
 import Header from "./Header";
 import Moment from "react-moment";
-import { AiFillStar } from "react-icons/ai";
-import { AiOutlineEye } from "react-icons/ai";
+import { AiFillStar, AiOutlineEye } from "react-icons/ai";
 import { FaThumbsUp } from "react-icons/fa";
-import { BsArrowRight } from "react-icons/bs";
-import { BsArrowLeft } from "react-icons/bs";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import millify from "millify";
 import { Link } from "react-router-dom";
 import overlay from "../assets/bg-noise.gif";
 
 const CarouselThumb = ({
-  movieId,
+  id,
   title,
   name,
   backdrop_path,
@@ -25,7 +23,6 @@ const CarouselThumb = ({
   handleNext,
   handlePrev,
 }) => {
-  console.log(movieId);
   const style = {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1)),url(${
       imgBase + backdrop_path
@@ -111,7 +108,7 @@ const CarouselThumb = ({
                 : overview}
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center text-center gap-y-7 md:gap-y-0 md:gap-x-5 w-fit">
-              <Link to={`/movie/${movieId}`}>
+              <Link to={`/movie/${id}`}>
                 <button className="tracking-wider px-7 py-4 bg-[red] rounded-full font-semibold flex items-center cursor-pointer w-fit shadow-lg">
                   More Information <BsArrowRight className="ml-2 text-sm" />
                 </button>

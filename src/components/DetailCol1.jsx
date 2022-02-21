@@ -1,15 +1,12 @@
 import { useContext, useRef } from "react";
 import DataContext from "../context/DataContext";
 import Moment from "react-moment";
+import { MovieCredit } from "./index";
+import ReactPlayer from "react-player/youtube";
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+import Slider from "react-slick";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import ReactPlayer from "react-player/youtube";
-import { MovieCredits } from "./MovieCredits";
-import { BsArrowRight } from "react-icons/bs";
-import { BsArrowLeft } from "react-icons/bs";
-import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 
 const DetailCol1 = () => {
   const { movieDetail } = useContext(DataContext);
@@ -125,7 +122,7 @@ const DetailCol1 = () => {
         </div>
         <div className="">
           {movieDetail.tagline && (
-            <div className="flex items-end gap-4 mb-10">
+            <div className="flex items-start gap-4 mb-10">
               <span className="font-bold">Tagline: </span>
               <span className="text-gray-400 italic">
                 {movieDetail.tagline}
@@ -181,7 +178,7 @@ const DetailCol1 = () => {
           </span>
         </div>
       )}
-      <MovieCredits />
+      <MovieCredit />
     </div>
   );
 };

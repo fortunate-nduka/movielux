@@ -3,19 +3,15 @@ import DataContext from "../context/DataContext";
 import { useParams } from "react-router-dom";
 import { baseUrl, movieDetailUrl } from "../utils/requests";
 import axios from "axios";
-import Header from "./Header";
-import Loader from "./Loader";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import DetailCol1 from "./DetailCol1";
-import DetailCol2 from "./DetailCol2";
+import { DetailCol1, DetailCol2, Header, Loader } from "./index";
 
-const MovieDetails = () => {
+const MovieDetail = () => {
   const {
     setMovieDetail,
     setLoading,
     loading,
     setRecommended,
+    setSimilar,
     setCast,
     setCrew,
   } = useContext(DataContext);
@@ -33,14 +29,19 @@ const MovieDetails = () => {
       const recommended = await axios(
         `${baseUrl}/movie/${id}/recommendations?${endUrl}&language=en-US&page=1`
       );
+      const similar = await axios(
+        `${baseUrl}/movie/${id}/similar?${endUrl}&sort_by=popularity.desc&language=en-US&page=1`
+      );
       const movieCredit = await axios(
         `${baseUrl}/movie/${id}/credits?${endUrl}`
       );
       setRecommended(recommended.data.results);
+      setSimilar(similar.data.results);
+      console.log(similar.data.results);
       setCrew(movieCredit.data.crew);
       setCast(movieCredit.data.cast);
       setMovieDetail(movieDetailRes.data);
-      console.log(movieDetailRes.data)
+      console.log(movieDetailRes.data);
     } catch (err) {
       console.log(err.message);
     } finally {
@@ -66,4 +67,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default MovieDetail;
