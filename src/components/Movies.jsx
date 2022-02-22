@@ -2,8 +2,7 @@ import { Fragment, useEffect, useContext } from "react";
 import Moment from "react-moment";
 import DataContext from "../context/DataContext";
 import { imgBase, movieUrl } from "../utils/requests";
-import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
+import { AiFillStar } from "react-icons/ai";
 import { PageControl, Loader } from "./index";
 import axios from "axios";
 import no_image from "../assets/no_image.jpg";
@@ -120,35 +119,19 @@ const Movies = () => {
                 alt="No Img"
               />
             )}
-            <div className="relative">
-              <div
-                style={{ width: 46, height: 46 }}
-                className="absolute right-3 -translate-y-7 ml-3 font-poppins font-semibold"
-              >
-                <CircularProgressbar
-                  value={movie.vote_average}
-                  maxValue={10}
-                  text={`${movie.vote_average / 1}`}
-                  strokeWidth={7}
-                  background
-                  backgroundPadding={6}
-                  styles={buildStyles({
-                    backgroundColor: "#000000",
-                    textColor: "#fff",
-                    pathColor: "#ff3030",
-                    trailColor: "transparent",
-                    textSize: "27px",
-                  })}
-                />
-              </div>
-              <div className="text-[18px] font-poppins font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-5 mb-[2px] px-1">
-                {movie.title}
-              </div>
+           <div className="text-[17px] font-poppins font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-3 mb-2 px-1">
+              {movie.title}
+            </div>
+            <div className="flex items-center justify-between">
               <Moment
                 date={movie.release_date}
                 fromNow
                 className="px-1 text-[11px] md:text-xs text-gray-400"
               />
+              <span className="flex items-start text-gray-400 text-[12px] md:text-xs font-bold">
+                <AiFillStar className="mr-1 text-[yellow]" />
+                {movie.vote_average}
+              </span>
             </div>
           </Link>
         ))}

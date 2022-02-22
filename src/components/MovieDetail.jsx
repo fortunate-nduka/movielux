@@ -59,7 +59,7 @@ const MovieDetail = () => {
   ) : (
     <div>
       <Header />
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row lg:justify-between pt-5">
+      <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between pt-5">
         <DetailCol1 />
         <DetailCol2 />
       </div>

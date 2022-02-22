@@ -5,8 +5,7 @@ import { MovieCredit } from "./index";
 import ReactPlayer from "react-player/youtube";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import Slider from "react-slick";
-import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
+import { AiFillStar } from "react-icons/ai";
 
 const DetailCol1 = () => {
   const { movieDetail } = useContext(DataContext);
@@ -63,7 +62,7 @@ const DetailCol1 = () => {
 
   return (
     <div className="lg:w-[60%]">
-      <div className="relative">
+      <div className="relative px-4">
         {movieDetail.videos && (
           <>
             <Slider
@@ -79,6 +78,7 @@ const DetailCol1 = () => {
                   url={`https://www.youtube.com/watch?v=${video.key}`}
                   width="100%"
                   controls={true}
+                  light={true}
                 />
               ))}
             </Slider>
@@ -95,28 +95,15 @@ const DetailCol1 = () => {
           </>
         )}
       </div>
-      <div className="mt-10">
+      <div className="mt-10 px-4">
         <div className="font-poppins font-black text-2xl md:text-3xl mb-6">
           {movieDetail.title || movieDetail.name}
         </div>
         <div className="flex items-center justify-between sm:justify-start sm:gap-x-8 mb-8">
-          <div style={{ width: 50, height: 50 }} className="">
-            <CircularProgressbar
-              value={movieDetail.vote_average}
-              maxValue={10}
-              text={`${movieDetail.vote_average / 1}`}
-              strokeWidth={10}
-              background
-              backgroundPadding={6}
-              styles={buildStyles({
-                backgroundColor: "#000000",
-                textColor: "#fff",
-                pathColor: "#ff3030",
-                trailColor: "transparent",
-                textSize: "30px",
-              })}
-            />
-          </div>
+          <span className="flex items-start text-gray-400 font-bold">
+            <AiFillStar className="mr-1 text-[yellow]" />
+            {movieDetail.vote_average}
+          </span>
           <span>{time_convert(movieDetail.runtime)}</span>
           <Moment date={dateToFormat} fromNow />
         </div>
@@ -171,7 +158,7 @@ const DetailCol1 = () => {
       </div>
 
       {movieDetail.overview && (
-        <div className="flex flex-col gap-1 mb-9 w-full">
+        <div className="flex flex-col gap-1 mb-9 w-full px-4">
           <span className="font-bold block">Description: </span>
           <span className="text-gray-400 leading-6">
             {movieDetail.overview}
