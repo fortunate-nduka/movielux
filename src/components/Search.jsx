@@ -27,7 +27,6 @@ const Search = () => {
       setLoading(true);
       const searchRes = await axios(searchUrl + searchterm);
       setSearchedMovies(searchRes.data.results);
-      console.log(searchRes.data.results);
     } catch (err) {
       console.log(err.message);
     } finally {
@@ -40,8 +39,8 @@ const Search = () => {
   }, [searchterm]);
 
   return (
-    <div style={style} className="bg-contain bg-center w-full min-h-screen">
-      <header className="bg-[rgba(0,0,0,.6)] py-6 px-5 flex items-center shadow-lg relative z-20">
+    <div style={style} className="bg-cover bg-no-repeat bg-center bg-fixed w-full min-h-screen">
+      <header className="bg-[rgba(0,0,0,.6)] py-6 px-5 flex items-center shadow-lg relative z-20 bg">
         <div className="container mx-auto flex items-center justify-end">
           <Link to="/" className="cursor-pointer">
             <FaRegTimesCircle className="text-3xl" />

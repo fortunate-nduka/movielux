@@ -3,7 +3,7 @@ import DataContext from "../context/DataContext";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { imgBase } from "../utils/requests";
-import not_available from "../assets/Not_Available.png";
+import not_available from "../assets/unavailable.png";
 import { AiFillStar } from "react-icons/ai";
 
 const DetailCol2 = () => {
@@ -31,7 +31,7 @@ const DetailCol2 = () => {
                   <img
                     src={not_available}
                     alt=""
-                    className="w-full shadow-lg"
+                    className="w-full shadow-lg rounded-md"
                   />
                 )}
                 <div className="px-1">
@@ -45,7 +45,7 @@ const DetailCol2 = () => {
                       className="px-1 text-[11px] md:text-xs text-gray-400"
                     />
                     <span className="flex items-center text-gray-400 text-[12px] md:text-[13px] font-bold">
-                      <AiFillStar className="mr-1 text-[yellow]" />
+                      <AiFillStar className="mr-1 text-[#ffff00]" />
                       {Math.round(recommend.vote_average * 10) / 10}
                     </span>
                   </div>
@@ -87,7 +87,7 @@ const DetailCol2 = () => {
                         className="px-1 text-[11px] md:text-xs text-gray-400"
                       />
                       <span className="flex items-center text-gray-400 text-[12px] md:text-[13px] font-bold">
-                        <AiFillStar className="mr-1 text-[yellow]" />
+                        <AiFillStar className="mr-1 text-[#ffff00]" />
                         {Math.round(similar.vote_average * 10) / 10}
                       </span>
                     </div>

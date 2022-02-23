@@ -109,7 +109,7 @@ const Movies = () => {
             {movie.poster_path ? (
               <img
                 src={imgBase + movie.poster_path}
-                alt={movie.title}
+                alt=""
                 className="w-[17rem] sm:w-[15rem] rounded-lg"
               />
             ) : (
@@ -119,7 +119,7 @@ const Movies = () => {
                 alt="No Img"
               />
             )}
-           <div className="text-[17px] font-poppins font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-3 mb-2 px-1">
+            <div className="text-[17px] font-poppins font-semibold w-[17rem] sm:w-[15rem] truncate ... tracking-wider mt-3 mb-2 px-1">
               {movie.title}
             </div>
             <div className="flex items-center justify-between">
@@ -129,7 +129,7 @@ const Movies = () => {
                 className="px-1 text-[11px] md:text-xs text-gray-400"
               />
               <span className="flex items-start text-gray-400 text-[12px] md:text-xs font-bold">
-                <AiFillStar className="mr-1 text-[yellow]" />
+                <AiFillStar className="mr-1 text-[#ffff00]" />
                 {movie.vote_average}
               </span>
             </div>

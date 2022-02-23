@@ -1,4 +1,3 @@
-import { imgBase } from "../utils/requests";
 import Header from "./Header";
 import Moment from "react-moment";
 import { AiFillStar, AiOutlineEye } from "react-icons/ai";
@@ -6,7 +5,9 @@ import { FaThumbsUp } from "react-icons/fa";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import millify from "millify";
 import { Link } from "react-router-dom";
+import { imgBase } from "../utils/requests";
 import overlay from "../assets/bg-noise.gif";
+import no_image from "../assets/no_image.jpg";
 
 const CarouselThumb = ({
   id,
@@ -29,7 +30,6 @@ const CarouselThumb = ({
     })`,
   };
   const dateToFormat = release_date || first_air_date;
-
   let lang = "";
   switch (original_language) {
     case "en":
@@ -119,11 +119,19 @@ const CarouselThumb = ({
             </div>
           </div>
           <div className="hidden lg:block lg:w-1/4">
-            <img
-              src={`${imgBase + poster_path}`}
-              className="rounded-lg mx-auto shadow-lg w-11/12"
-              alt="movie poster"
-            />
+            {poster_path ? (
+              <img
+                src={`${imgBase + poster_path}`}
+                className="rounded-lg mx-auto shadow-lg w-11/12"
+                alt="movie poster"
+              />
+            ) : (
+              <img
+                src={no_image}
+                className="rounded-lg mx-auto shadow-lg w-11/12"
+                alt=""
+              />
+            )}
           </div>
         </div>
       </div>

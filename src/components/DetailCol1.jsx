@@ -101,7 +101,7 @@ const DetailCol1 = () => {
         </div>
         <div className="flex items-center justify-between sm:justify-start sm:gap-x-8 mb-8">
           <span className="flex items-start text-gray-400 font-bold">
-            <AiFillStar className="mr-1 text-[yellow]" />
+            <AiFillStar className="mr-1 text-[#ffff00]" />
             {movieDetail.vote_average}
           </span>
           <span>{time_convert(movieDetail.runtime)}</span>
@@ -117,11 +117,11 @@ const DetailCol1 = () => {
             </div>
           )}
           <div className="flex items-end gap-4 mb-10">
-            <span className="font-bold">Parental Guidance: </span>
+            <span className="font-bold">Adult: </span>
             {movieDetail.adult === true ? (
-              <span className="font-bold">YES</span>
+              <span className="text-gray-400">YES</span>
             ) : (
-              <span className="font-bold">NO</span>
+              <span className="text-gray-400">NO</span>
             )}
           </div>
           {movieDetail.original_language && (

@@ -37,11 +37,9 @@ const MovieDetail = () => {
       );
       setRecommended(recommended.data.results);
       setSimilar(similar.data.results);
-      console.log(similar.data.results);
       setCrew(movieCredit.data.crew);
       setCast(movieCredit.data.cast);
       setMovieDetail(movieDetailRes.data);
-      console.log(movieDetailRes.data);
     } catch (err) {
       console.log(err.message);
     } finally {

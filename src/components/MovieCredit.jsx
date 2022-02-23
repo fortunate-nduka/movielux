@@ -1,14 +1,13 @@
 import { Fragment, useContext, useRef } from "react";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
-// import { Rating } from "react-simple-star-rating";
 import Slider from "react-slick";
 import DataContext from "../context/DataContext";
 import { imgBase } from "../utils/requests";
 import no_image from "../assets/no_image.jpg";
+import { AiFillStar } from "react-icons/ai";
 
 const MovieCredit = () => {
   const { cast, crew } = useContext(DataContext);
-  // const [rating, setRating] = useState(100);
   const castSliderRef = useRef(null);
   const crewSliderRef = useRef(null);
 
@@ -30,17 +29,15 @@ const MovieCredit = () => {
     dots: false,
     infinite: false,
     slidesToShow: 3,
-    // slidesToScroll: 3,
     draggable: false,
     swipe: false,
-    // fade: true,
     responsive: [
       {
         breakpoint: 426,
         settings: {
           slidesToShow: 1,
           slideToScroll: 1,
-          centerMode:true
+          centerMode: true,
         },
       },
       {
@@ -69,10 +66,10 @@ const MovieCredit = () => {
               Casts
             </div>
             <div className="space-x-2">
-              <button className="border-2 border-white rounded-full p-1 shadow-lg">
+              <button className="border-2 border-white rounded-full p-2 shadow-lg">
                 <BsArrowLeft fontSize={13} onClick={castPrev} />
               </button>
-              <button className="border-2 border-white rounded-full p-1 shadow-lg">
+              <button className="border-2 border-white rounded-full p-2 shadow-lg">
                 <BsArrowRight fontSize={13} onClick={castNext} />
               </button>
             </div>
@@ -84,25 +81,20 @@ const MovieCredit = () => {
                   <img
                     src={imgBase + c.profile_path}
                     alt=""
-                    className="w-[15rem] shadow-lg rounded-md"
+                    className="w-[16rem] shadow-lg rounded-md"
                   />
                 ) : (
                   <img
                     src={no_image}
                     alt=""
-                    className="w-[15rem] shadow-lg rounded-md"
+                    className="w-[16rem] shadow-lg rounded-md"
                   />
                 )}
-                <div className="space-y-1 mt-2 pl-1 text-[13px] md:text-xs">
+                <div className="space-y-1 mt-2 pl-1 text-[12px] md:text-xs">
                   <div className="font-bold">
                     Name:{" "}
                     <span className="text-gray-400 font-normal">
-                      {c.name || c.original_name}{" "}
-                      {c.gender === 1
-                        ? "- Female"
-                        : c.gender === 2
-                        ? "- Male"
-                        : ""}
+                      {c.name || c.original_name}
                     </span>
                   </div>
                   <div className="font-bold">
@@ -111,16 +103,29 @@ const MovieCredit = () => {
                       {c.character}
                     </span>
                   </div>
-                  {/* <div style={{ display: "flex", width: "100%" }}>
-                  <Rating
-                    className="react-simple-star-rating"
-                    style={{"display":"flex"}}
-                    size={15}
-                    iconsCount={2}
-                    readonly={true}
-                    ratingValue={rating}
-                  />
-                </div> */}
+                  {c.gender ? (
+                    <div className="font-bold flex">
+                      Gender:{" "}
+                      <span className="text-gray-400 font-normal pl-1 pr-8">
+                        {c.gender === 1
+                          ? "Female"
+                          : c.gender === 2
+                          ? "Male"
+                          : ""}
+                      </span>
+                      <span className="flex items-start text-gray-400 text-[12px] md:text-xs font-bold">
+                        <AiFillStar className="mr-1 text-[#ffff00]" />
+                        {Math.round(c.popularity)}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="font-bold">
+                      <span className="flex items-start text-gray-400 text-[12px] md:text-xs font-bold">
+                        <AiFillStar className="mr-1 text-[#ffff00]" />
+                        {Math.round(c.popularity)}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -135,10 +140,10 @@ const MovieCredit = () => {
               Crew
             </div>
             <div className="space-x-2">
-              <button className="border-2 border-white rounded-full p-1 shadow-lg">
+              <button className="border-2 border-white rounded-full p-2 shadow-lg">
                 <BsArrowLeft fontSize={13} onClick={crewPrev} />
               </button>
-              <button className="border-2 border-white rounded-full p-1 shadow-lg">
+              <button className="border-2 border-white rounded-full p-2 shadow-lg">
                 <BsArrowRight fontSize={13} onClick={crewNext} />
               </button>
             </div>
@@ -150,25 +155,20 @@ const MovieCredit = () => {
                   <img
                     src={imgBase + c.profile_path}
                     alt=""
-                    className="w-[15rem] shadow-lg rounded-md"
+                    className="w-[16rem] shadow-lg rounded-md"
                   />
                 ) : (
                   <img
                     src={no_image}
                     alt=""
-                    className="w-[15rem] shadow-lg rounded-md"
+                    className="w-[16rem] shadow-lg rounded-md"
                   />
                 )}
-                <div className="space-y-1 mt-2 pl-1 text-[13px] md:text-xs">
+                <div className="space-y-1 mt-2 pl-1 text-[12px] md:text-xs">
                   <div className="font-bold">
                     Name:{" "}
                     <span className="text-gray-400 font-normal">
-                      {c.name || c.original_name}{" "}
-                      {c.gender === 1
-                        ? "- Female"
-                        : c.gender === 2
-                        ? "- Male"
-                        : ""}
+                      {c.name || c.original_name}
                     </span>
                   </div>
                   <div className="font-bold">
@@ -177,6 +177,18 @@ const MovieCredit = () => {
                       {c.known_for_department}
                     </span>
                   </div>
+                  {c.gender ? (
+                    <div className="font-bold">
+                      Gender:{" "}
+                      <span className="text-gray-400 font-normal pl-1 pr-8">
+                        {c.gender === 1
+                          ? "Female"
+                          : c.gender === 2
+                          ? "Male"
+                          : ""}
+                      </span>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             ))}
