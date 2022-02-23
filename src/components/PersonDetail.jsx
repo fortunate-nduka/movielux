@@ -100,7 +100,7 @@ const PersonDetail = () => {
   return (
     <div
       style={style}
-      className="bg-cover bg-center bg-no-repeat bg-fixed min-h-screen pb-12"
+      className="bg-cover bg-center bg-no-repeat bg-fixed pb-12"
     >
       <header className="bg-[rgba(0,0,0,.6)] py-6 px-5 flex items-center shadow-lg relative z-20">
         <div className="container mx-auto flex items-center justify-between">
