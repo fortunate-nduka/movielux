@@ -7,6 +7,7 @@ export { default as Home } from "./Home";
 export { default as Loader } from "./Loader";
 export { default as MovieCredit } from "./MovieCredit";
 export { default as MovieDetail } from "./MovieDetail";
+export { default as PersonDetail } from "./PersonDetail";
 export { default as Movies } from "./Movies";
 export { default as Nav } from "./Nav";
 export { default as PageControl } from "./PageControl";

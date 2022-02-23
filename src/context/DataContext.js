@@ -12,6 +12,7 @@ export const DataProvider = ({ children }) => {
   const [similar, setSimilar] = useState([]);
   const [cast, setCast] = useState([]);
   const [crew, setCrew] = useState([]);
+  const [person, setPerson] = useState({});
   const [searchterm, setSearchterm] = useState("");
   const [searchedMovies, setSearchedMovies] = useState([]);
 
@@ -36,6 +37,8 @@ export const DataProvider = ({ children }) => {
         setCast,
         crew,
         setCrew,
+        person,
+        setPerson,
         searchterm,
         setSearchterm,
         searchedMovies,

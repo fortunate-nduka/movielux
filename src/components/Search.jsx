@@ -1,16 +1,18 @@
 import { useContext, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import DataContext from "../context/DataContext";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import movieBg from "../assets/movies-bg.jpg";
 import no_image from "../assets/no_image.jpg";
 import axios from "axios";
 import { imgBase, searchUrl } from "../utils/requests";
 import Moment from "react-moment";
 import { AiFillStar } from "react-icons/ai";
+import logo from "../assets/logo.png";
 
 const Search = () => {
+  const navigate = useNavigate();
   const {
     searchterm,
     setSearchterm,
@@ -39,12 +41,18 @@ const Search = () => {
   }, [searchterm]);
 
   return (
-    <div style={style} className="bg-cover bg-no-repeat bg-center bg-fixed w-full min-h-screen">
+    <div
+      style={style}
+      className="bg-cover bg-no-repeat bg-center bg-fixed w-full min-h-screen"
+    >
       <header className="bg-[rgba(0,0,0,.6)] py-6 px-5 flex items-center shadow-lg relative z-20 bg">
-        <div className="container mx-auto flex items-center justify-end">
-          <Link to="/" className="cursor-pointer">
-            <FaRegTimesCircle className="text-3xl" />
+        <div className="container mx-auto flex items-center justify-between">
+          <Link to="/">
+            <img src={logo} alt="logo" className="w-8 md:w-10" />
           </Link>
+          <div onClick={() => navigate(-1)} className="cursor-pointer">
+            <FaRegTimesCircle className="text-3xl" />
+          </div>
         </div>
       </header>
       <div className="px-6">

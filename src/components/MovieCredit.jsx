@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import DataContext from "../context/DataContext";
 import { imgBase } from "../utils/requests";
 import no_image from "../assets/no_image.jpg";
-import { AiFillStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const MovieCredit = () => {
   const { cast, crew } = useContext(DataContext);
@@ -76,7 +76,7 @@ const MovieCredit = () => {
           </div>
           <Slider ref={castSliderRef} {...settings}>
             {cast.map((c) => (
-              <div className="px-2">
+              <div key={c.id} className="px-2">
                 {c.profile_path ? (
                   <img
                     src={imgBase + c.profile_path}
@@ -103,29 +103,12 @@ const MovieCredit = () => {
                       {c.character}
                     </span>
                   </div>
-                  {c.gender ? (
-                    <div className="font-bold flex">
-                      Gender:{" "}
-                      <span className="text-gray-400 font-normal pl-1 pr-8">
-                        {c.gender === 1
-                          ? "Female"
-                          : c.gender === 2
-                          ? "Male"
-                          : ""}
-                      </span>
-                      <span className="flex items-start text-gray-400 text-[12px] md:text-xs font-bold">
-                        <AiFillStar className="mr-1 text-[#ffff00]" />
-                        {Math.round(c.popularity)}
-                      </span>
-                    </div>
-                  ) : (
-                    <div className="font-bold">
-                      <span className="flex items-start text-gray-400 text-[12px] md:text-xs font-bold">
-                        <AiFillStar className="mr-1 text-[#ffff00]" />
-                        {Math.round(c.popularity)}
-                      </span>
-                    </div>
-                  )}
+                  <Link
+                    to={`/person/${c.id}`}
+                    className="pl-1 pt-2 font-normal flex items-center text-[yellow]"
+                  >
+                    see more <BsArrowRight className="ml-2 text-sm" />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -150,7 +133,7 @@ const MovieCredit = () => {
           </div>
           <Slider ref={crewSliderRef} {...settings}>
             {crew.map((c) => (
-              <div className="px-2">
+              <div key={c.id} className="px-2">
                 {c.profile_path ? (
                   <img
                     src={imgBase + c.profile_path}
@@ -177,18 +160,12 @@ const MovieCredit = () => {
                       {c.known_for_department}
                     </span>
                   </div>
-                  {c.gender ? (
-                    <div className="font-bold">
-                      Gender:{" "}
-                      <span className="text-gray-400 font-normal pl-1 pr-8">
-                        {c.gender === 1
-                          ? "Female"
-                          : c.gender === 2
-                          ? "Male"
-                          : ""}
-                      </span>
-                    </div>
-                  ) : null}
+                  <Link
+                    to={`/person/${c.id}`}
+                    className="pl-1 pt-2 font-normal flex items-center text-[yellow]"
+                  >
+                    see more <BsArrowRight className="ml-2 text-sm" />
+                  </Link>
                 </div>
               </div>
             ))}

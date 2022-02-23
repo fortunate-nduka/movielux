@@ -75,6 +75,7 @@ const DetailCol1 = () => {
             >
               {movieDetail.videos.results.slice(0, 3).map((video) => (
                 <ReactPlayer
+                  key={video.id}
                   url={`https://www.youtube.com/watch?v=${video.key}`}
                   width="100%"
                   controls={true}
@@ -135,7 +136,7 @@ const DetailCol1 = () => {
               <span className="font-bold">Genres: </span>
               <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
                 {movieDetail.genres.map((genre) => (
-                  <span className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
+                  <span key={genre.name} className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
                     {genre.name}
                   </span>
                 ))}
@@ -147,7 +148,7 @@ const DetailCol1 = () => {
               <span className="font-bold">Production Companies: </span>
               <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
                 {movieDetail.production_companies.map((pc) => (
-                  <span className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
+                  <span key={pc.id} className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
                     {pc.name}
                   </span>
                 ))}

@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import DataContext from "../context/DataContext";
 import { useParams } from "react-router-dom";
-import { baseUrl, movieDetailUrl } from "../utils/requests";
+import { baseUrl,endUrl } from "../utils/requests";
 import axios from "axios";
 import { DetailCol1, DetailCol2, Header, Loader } from "./index";
 
@@ -17,29 +17,27 @@ const MovieDetail = () => {
   } = useContext(DataContext);
 
   const { id } = useParams();
-  const API_KEY = process.env.REACT_APP_API_KEY;
-  const endUrl = `api_key=${API_KEY}`;
 
   const fetchMovieDetail = async () => {
     try {
       setLoading(true);
       const movieDetailRes = await axios(
-        `${movieDetailUrl}/${id}?${endUrl}&append_to_response=videos`
+        `${baseUrl}/movie/${id}?${endUrl}&append_to_response=videos`
       );
       const recommended = await axios(
-        `${baseUrl}/movie/${id}/recommendations?${endUrl}&language=en-US&page=1`
+        `${baseUrl}/movie/${id}/recommendations?${endUrl}&page=1`
       );
       const similar = await axios(
-        `${baseUrl}/movie/${id}/similar?${endUrl}&sort_by=popularity.desc&language=en-US&page=1`
+        `${baseUrl}/movie/${id}/similar?${endUrl}&page=1`
       );
       const movieCredit = await axios(
         `${baseUrl}/movie/${id}/credits?${endUrl}`
       );
+      setMovieDetail(movieDetailRes.data);
       setRecommended(recommended.data.results);
       setSimilar(similar.data.results);
       setCrew(movieCredit.data.crew);
       setCast(movieCredit.data.cast);
-      setMovieDetail(movieDetailRes.data);
     } catch (err) {
       console.log(err.message);
     } finally {
@@ -57,7 +55,7 @@ const MovieDetail = () => {
   ) : (
     <div>
       <Header />
-      <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between pt-5">
+      <div className="relative container mx-auto flex flex-col lg:flex-row lg:justify-between pt-5">
         <DetailCol1 />
         <DetailCol2 />
       </div>
