@@ -65,7 +65,7 @@ const Search = () => {
             value={searchterm}
             onChange={(e) => setSearchterm(e.target.value)}
             placeholder="Search Movie..."
-            className="w-full h-12 bg-gray-400 placeholder:text-black text-black font-poppins placeholder:font-poppins tracking-wider text-sm shadow-2xl outline-none pl-11 md:pl-14 rounded"
+            className="w-full h-12 bg-gray-100 placeholder:text-black text-black font-poppins placeholder:font-poppins tracking-wider text-sm shadow-2xl outline-none pl-11 md:pl-14 rounded"
           />
         </form>
 
