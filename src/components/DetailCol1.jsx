@@ -48,6 +48,9 @@ const DetailCol1 = () => {
     case "fr":
       lang = "French";
       break;
+      case "it":
+      lang = "Italian";
+      break;
     default:
       lang = movieDetail.original_language;
       break;
@@ -136,7 +139,10 @@ const DetailCol1 = () => {
               <span className="font-bold">Genres: </span>
               <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
                 {movieDetail.genres.map((genre) => (
-                  <span key={genre.name} className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
+                  <span
+                    key={genre.name}
+                    className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400"
+                  >
                     {genre.name}
                   </span>
                 ))}
@@ -148,7 +154,10 @@ const DetailCol1 = () => {
               <span className="font-bold">Production Companies: </span>
               <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
                 {movieDetail.production_companies.map((pc) => (
-                  <span key={pc.id} className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400">
+                  <span
+                    key={pc.id}
+                    className="border md:border-2 border-red-900 shadow-lg px-5 py-3 rounded-full text-gray-400"
+                  >
                     {pc.name}
                   </span>
                 ))}
@@ -161,7 +170,7 @@ const DetailCol1 = () => {
       {movieDetail.overview && (
         <div className="flex flex-col gap-1 mb-9 w-full px-4">
           <span className="font-bold block">Description: </span>
-          <span className="text-gray-400 leading-6">
+          <span className="text-gray-400 leading-6 text-[13px] sm:text-sm">
             {movieDetail.overview}
           </span>
         </div>

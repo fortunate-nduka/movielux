@@ -4,7 +4,6 @@ import { trendingUrl } from "../utils/requests";
 import Slider from "react-slick";
 import CarouselThumb from "./CarouselThumb";
 
-
 const Carousel = () => {
   const [trends, setTrends] = useState([]);
   const sliderRef = useRef(null);
@@ -13,6 +12,7 @@ const Carousel = () => {
     const fetchMovies = async () => {
       const trendsRes = await axios(trendingUrl);
       setTrends(trendsRes.data.results);
+      console.log(trendsRes.data.results);
     };
     fetchMovies();
   }, []);
@@ -36,14 +36,17 @@ const Carousel = () => {
       draggable={false}
       swipe={false}
     >
-      {trends.map((trend) => (
-        <CarouselThumb
-          key={trend.id}
-          {...trend}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-        />
-      ))}
+      {trends.map(
+        (trend) =>
+          trend.media_type === "movie" && (
+            <CarouselThumb
+              key={trend.id}
+              {...trend}
+              handleNext={handleNext}
+              handlePrev={handlePrev}
+            />
+          )
+      )}
     </Slider>
   );
 };

@@ -12,7 +12,7 @@ const DetailCol2 = () => {
   const similarSlice = similar.slice(0, 8);
 
   return (
-    <div className="lg:w-[30%] lg:mt-0 mt-20 pb-20 px-4">
+    <div className="lg:w-[30%] lg:mt-0 mt-32 px-4">
       {recommended.length > 6 ? (
         <>
           <div className="font-poppins uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2 mb-10">
@@ -35,7 +35,7 @@ const DetailCol2 = () => {
                   />
                 )}
                 <div className="px-1">
-                  <div className="text-base font-poppins font-bold truncate ... tracking-wider mt-1 mb-[2px] mt-2 w-auto">
+                  <div className="text-base font-poppins font-bold truncate ... tracking-wider mb-[2px] mt-2 w-auto">
                     {recommend.title}
                   </div>
                   <div className="flex items-center justify-between">
@@ -77,7 +77,7 @@ const DetailCol2 = () => {
                     />
                   )}
                   <div className="px-1">
-                    <div className="text-base font-poppins font-bold truncate ... tracking-wider mt-1 mb-[2px] mt-2 w-auto">
+                    <div className="text-base font-poppins font-bold truncate ... tracking-wider mb-[2px] mt-2 w-auto">
                       {similar.title}
                     </div>
                     <div className="flex items-center justify-between">

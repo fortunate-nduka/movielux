@@ -30,7 +30,7 @@ const MovieCredit = () => {
     infinite: false,
     slidesToShow: 3,
     draggable: false,
-    swipe: false,
+    swipe: true,
     responsive: [
       {
         breakpoint: 426,
@@ -60,7 +60,7 @@ const MovieCredit = () => {
   return (
     <Fragment>
       {cast.length > 1 && (
-        <div className="mt-24">
+        <div className="mt-28">
           <div className="flex items-center justify-between mb-10 px-4">
             <div className="font-poppins uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2">
               Casts
@@ -105,9 +105,9 @@ const MovieCredit = () => {
                   </div>
                   <Link
                     to={`/person/${c.id}`}
-                    className="pl-1 pt-2 font-normal flex items-center text-[yellow]"
+                    className="pt-2 flex items-center text-gray-400 font-semibold"
                   >
-                    see more <BsArrowRight className="ml-2 text-sm" />
+                    see full bio <BsArrowRight className="ml-2 text-sm" />
                   </Link>
                 </div>
               </div>
@@ -117,7 +117,7 @@ const MovieCredit = () => {
       )}
 
       {crew.length > 1 && (
-        <div className="mt-24">
+        <div className="mt-20">
           <div className="flex items-center justify-between mb-10 px-4">
             <div className="font-poppins uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2">
               Crew
@@ -162,9 +162,9 @@ const MovieCredit = () => {
                   </div>
                   <Link
                     to={`/person/${c.id}`}
-                    className="pl-1 pt-2 font-normal flex items-center text-[yellow]"
+                    className="pt-2 flex items-center text-gray-400 font-semibold"
                   >
-                    see more <BsArrowRight className="ml-2 text-sm" />
+                    see full bio <BsArrowRight className="ml-2 text-sm" />
                   </Link>
                 </div>
               </div>

@@ -10,6 +10,7 @@ import { imgBase, searchUrl } from "../utils/requests";
 import Moment from "react-moment";
 import { AiFillStar } from "react-icons/ai";
 import logo from "../assets/logo.png";
+import Footer from "./Footer";
 
 const Search = () => {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const Search = () => {
   return (
     <div
       style={style}
-      className="bg-cover bg-no-repeat bg-center bg-fixed w-full min-h-screen"
+      className="bg-cover bg-no-repeat bg-center bg-fixed w-full"
     >
       <header className="bg-[rgba(0,0,0,.6)] py-6 px-5 flex items-center shadow-lg relative z-20 bg">
         <div className="container mx-auto flex items-center justify-between">
@@ -57,18 +58,18 @@ const Search = () => {
       </header>
       <div className="px-6">
         <form className="w-full sm:w-[90%] lg:w-[80%] mx-auto pt-6 flex items-center relative">
-          <BsSearch className="text-base absolute left-3 z-10 text-black" />
+          <BsSearch className="text-base absolute left-4 md:left-6 z-10 text-black" />
           <input
             type="text"
             name="searchterm"
             value={searchterm}
             onChange={(e) => setSearchterm(e.target.value)}
             placeholder="Search Movie..."
-            className="w-full h-12 bg-gray-400 placeholder:text-black text-black font-poppins placeholder:font-poppins tracking-wider text-sm shadow-2xl outline-none pl-12 rounded"
+            className="w-full h-12 bg-gray-400 placeholder:text-black text-black font-poppins placeholder:font-poppins tracking-wider text-sm shadow-2xl outline-none pl-11 md:pl-14 rounded"
           />
         </form>
 
-        <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-16 px-5 mt-10">
+        <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-16 px-5 mt-10 min-h-screen">
           {searchedMovies.map((sm) => (
             <Link
               to={`/movie/${sm.id}`}
@@ -106,6 +107,7 @@ const Search = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,9 +1,10 @@
 import { useContext, useEffect } from "react";
 import DataContext from "../context/DataContext";
 import { useParams } from "react-router-dom";
-import { baseUrl,endUrl } from "../utils/requests";
+import { baseUrl, endUrl } from "../utils/requests";
 import axios from "axios";
 import { DetailCol1, DetailCol2, Header, Loader } from "./index";
+import Footer from "./Footer";
 
 const MovieDetail = () => {
   const {
@@ -53,12 +54,13 @@ const MovieDetail = () => {
   return loading ? (
     <Loader />
   ) : (
-    <div>
+    <div className="min-h-screen">
       <Header />
       <div className="relative container mx-auto flex flex-col lg:flex-row lg:justify-between pt-5">
         <DetailCol1 />
         <DetailCol2 />
       </div>
+      <Footer />
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { PageControl, Loader } from "./index";
 import axios from "axios";
 import no_image from "../assets/no_image.jpg";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Movies = () => {
   const { movies, setMovies, loading, setLoading, page, genre } =
@@ -137,6 +138,7 @@ const Movies = () => {
         ))}
       </div>
       <PageControl />
+      <Footer />
     </Fragment>
   );
 };
