@@ -48,7 +48,7 @@ const DetailCol1 = () => {
     case "fr":
       lang = "French";
       break;
-      case "it":
+    case "it":
       lang = "Italian";
       break;
     default:
@@ -76,15 +76,18 @@ const DetailCol1 = () => {
               draggable={false}
               swipe={false}
             >
-              {movieDetail.videos.results.slice(0, 3).map((video) => (
-                <ReactPlayer
-                  key={video.id}
-                  url={`https://www.youtube.com/watch?v=${video.key}`}
-                  width="100%"
-                  controls={true}
-                  light={true}
-                />
-              ))}
+              {movieDetail.videos.results.map(
+                (video) =>
+                  movieDetail.videos.results.type = "Trailer" && (
+                    <ReactPlayer
+                      key={video.id}
+                      url={`https://www.youtube.com/watch?v=${video.key}`}
+                      width="100%"
+                      controls={true}
+                      light={true}
+                    />
+                  )
+              )}
             </Slider>
             {movieDetail.videos.results.length > 1 && (
               <div className="absolute right-3 bottom-1 mt-10  translate-y-8  md:translate-y-10 space-x-2">

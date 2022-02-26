@@ -119,6 +119,7 @@ const CarouselThumb = ({
               <button className="tracking-wider px-7 py-4 border border-white rounded-full font-semibold flex items-center justify-center ">
                 Watch Trailer <AiOutlineEye className="ml-2 text-lg" />
               </button>
+              
             </div>
           </div>
           <div className="hidden lg:block lg:w-1/4">

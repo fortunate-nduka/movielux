@@ -3,9 +3,10 @@ import { useContext, useEffect } from "react";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import logo from "../assets/logo.png";
-import bgImg from "../assets/actors-bg.jpg";
+import no_image from "../assets/no_image.jpg";
 import DataContext from "../context/DataContext";
-import { baseUrl, endUrl } from "../utils/requests";
+import { baseUrl, endUrl, imgBase } from "../utils/requests";
+import Footer from "./Footer";
 
 const PersonDetailContainer = ({
   profile_path,
@@ -19,8 +20,8 @@ const PersonDetailContainer = ({
   biography,
 }) => {
   return (
-    <div className="h-auto mx-3 sm:mx-6 bg-[rgba(0,0,0,0.6)] p-5 px-3 sm:px-4 mt-12 lg:flex lg:items-center justify-between lg:gap-x-8 lg:px-10 py-10 rounded-lg shadow-2xl">
-      <div className="space-y-7 mt-2 pl-1">
+    <div className="pt-16 px-5">
+      <div className="space-y-7 mt-2 pl-1 px-2">
         {name && (
           <div className="font-bold text-gray-400 ">
             Name: <span className="font-normal text-white">{name}</span>
@@ -61,10 +62,21 @@ const PersonDetailContainer = ({
         {biography && (
           <div className="font-bold flex flex-col gap-y-2 text-gray-400">
             Biography:{" "}
-            <span className="text-white font-normal text-[12px] leading-6">
+            <span className="text-white font-normal text-[12px] leading-6 lg:w-[90%]">
               {biography}
             </span>
           </div>
+        )}
+      </div>
+      <div className="lg:hidden">
+        {profile_path ? (
+          <img
+            src={imgBase + profile_path}
+            alt=""
+            className="w-[18rem] md:w-[20rem] mx-auto rounded-md shadow-2xl mt-16"
+          />
+        ) : (
+          <img src={no_image} alt="" />
         )}
       </div>
     </div>
@@ -76,9 +88,6 @@ const PersonDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const style = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),url(${bgImg})`,
-  };
   const fetchPersonDetail = async () => {
     try {
       setLoading(true);
@@ -98,23 +107,21 @@ const PersonDetail = () => {
   }, [id]);
 
   return (
-    <div
-      style={style}
-      className="bg-cover bg-center bg-no-repeat bg-fixed pb-12"
-    >
+    <div className="">
       <header className="bg-[rgba(0,0,0,.6)] py-6 px-5 flex items-center shadow-lg relative z-20">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/">
-            <img src={logo} alt="logo" className="w-8 md:w-10" />
+            <img src={logo} alt="logo" className="w-7" />
           </Link>
           <div onClick={() => navigate(-1)} className="cursor-pointer">
-            <FaRegTimesCircle className="text-3xl" />
+            <FaRegTimesCircle className="text-2xl" />
           </div>
         </div>
       </header>
-      <div className="px-0 sm:px-4 mx-auto md:w-[90%] lg:w-[95%] xl:w-[80%] 2xl:w-[70%]">
+      <div className="px-0 sm:px-4 mx-auto md:w-[90%] lg:w-[95%] xl:w-[80%] 2xl:w-[70%] min-h-[75vh]">
         <PersonDetailContainer {...person} />
       </div>
+      <Footer />
     </div>
   );
 };

@@ -91,18 +91,23 @@ const MovieCredit = () => {
                   />
                 )}
                 <div className="space-y-1 mt-2 pl-1 text-[12px] md:text-xs">
-                  <div className="font-bold">
-                    Name:{" "}
-                    <span className="text-gray-400 font-normal">
-                      {c.name || c.original_name}
-                    </span>
-                  </div>
-                  <div className="font-bold">
-                    Character:{" "}
-                    <span className="text-gray-400 font-normal">
-                      {c.character}
-                    </span>
-                  </div>
+                  {c.name ||
+                    (c.original_name && (
+                      <div className="font-bold">
+                        Name:{" "}
+                        <span className="text-gray-400 font-normal">
+                          {c.name || c.original_name}
+                        </span>
+                      </div>
+                    ))}
+                  {c.character && (
+                    <div className="font-bold">
+                      Character:{" "}
+                      <span className="text-gray-400 font-normal">
+                        {c.character}
+                      </span>
+                    </div>
+                  )}
                   <Link
                     to={`/person/${c.id}`}
                     className="pt-2 flex items-center text-gray-400 font-semibold"
@@ -148,18 +153,23 @@ const MovieCredit = () => {
                   />
                 )}
                 <div className="space-y-1 mt-2 pl-1 text-[12px] md:text-xs">
-                  <div className="font-bold">
-                    Name:{" "}
-                    <span className="text-gray-400 font-normal">
-                      {c.name || c.original_name}
-                    </span>
-                  </div>
-                  <div className="font-bold">
-                    Department:{" "}
-                    <span className="text-gray-400 font-normal">
-                      {c.known_for_department}
-                    </span>
-                  </div>
+                  {c.name ||
+                    (c.original_name && (
+                      <div className="font-bold">
+                        Name:{" "}
+                        <span className="text-gray-400 font-normal">
+                          {c.name || c.original_name}
+                        </span>
+                      </div>
+                    ))}
+                  {c.known_for_department && (
+                    <div className="font-bold">
+                      Department:{" "}
+                      <span className="text-gray-400 font-normal">
+                        {c.known_for_department}
+                      </span>
+                    </div>
+                  )}
                   <Link
                     to={`/person/${c.id}`}
                     className="pt-2 flex items-center text-gray-400 font-semibold"

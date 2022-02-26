@@ -44,15 +44,15 @@ const Search = () => {
   return (
     <div
       style={style}
-      className="bg-cover bg-no-repeat bg-center bg-fixed w-full"
+      className="bg-cover bg-no-repeat bg-center bg-fixed w-full h-auto  min-h-screen"
     >
-      <header className="bg-[rgba(0,0,0,.6)] py-6 px-5 flex items-center shadow-lg relative z-20 bg">
+      <header className="bg-[rgba(0,0,0,.6)] py-6 px-5 flex items-center shadow-lg relative z-20">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/">
-            <img src={logo} alt="logo" className="w-8 md:w-10" />
+            <img src={logo} alt="logo" className="w-7" />
           </Link>
           <div onClick={() => navigate(-1)} className="cursor-pointer">
-            <FaRegTimesCircle className="text-3xl" />
+            <FaRegTimesCircle className="text-2xl" />
           </div>
         </div>
       </header>
@@ -69,7 +69,7 @@ const Search = () => {
           />
         </form>
 
-        <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-16 px-5 mt-10 min-h-screen">
+        <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-16 px-5 mt-10">
           {searchedMovies.map((sm) => (
             <Link
               to={`/movie/${sm.id}`}
@@ -105,9 +105,10 @@ const Search = () => {
               </div>
             </Link>
           ))}
+
+          <Footer />
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
