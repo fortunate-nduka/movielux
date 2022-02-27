@@ -12,7 +12,7 @@ const DetailCol2 = () => {
   const similarSlice = similar.slice(0, 8);
 
   return (
-    <div className="lg:w-[30%] lg:mt-0 mt-32 px-4">
+    <div className="lg:w-[30%] md:mt-10 mt-32 px-4">
       {recommended.length > 6 ? (
         <>
           <div className="font-poppins uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2 mb-10">
