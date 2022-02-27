@@ -17,10 +17,70 @@
     transform: translate(-0.1px, 0.2rem) rotate(5deg);
     animation: flicker 2s ease-in-out infinite alternate;
   }
-  .react-simple-star-rating {
-    display: flex !important;
+
+  .loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow: hidden;
   }
-  .filled-icons {
-    display: flex !important;
+  .loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #ffffff;
+    animation: spin 1.7s linear infinite;
+    z-index: 11;
   }
+  .loader::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #E62E2D;
+    animation: spin-reverse 0.6s linear infinite;
+  }
+
+  .loader::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #f9c922;
+    animation: spin 1s linear infinite;
+  }
+  .loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #000000;
+  z-index: 10;
+}
+
+.loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+.loader-wrapper .loader-section.section-right {
+  right: 0;
+}
 }
