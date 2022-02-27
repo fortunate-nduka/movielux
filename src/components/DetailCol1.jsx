@@ -102,11 +102,11 @@ const DetailCol1 = () => {
           </>
         )}
       </div>
-      <div className="mt-10 px-4">
-        <div className="font-poppins font-black text-2xl md:text-3xl lg:text-4xl mb-6">
+      <div className="mt-10 md:mt-20 px-4">
+        <div className="font-poppins font-black text-2xl md:text-3xl lg:text-4xl mb-10 md:mb-13">
           {movieDetail.title || movieDetail.name}
         </div>
-        <div className="flex items-center justify-between sm:justify-start sm:gap-x-8 mb-8">
+        <div className="flex items-center justify-between sm:justify-start sm:gap-x-8 mb-10 md:mb-13">
           <span className="flex items-start text-gray-400 font-bold">
             <AiFillStar className="mr-1 text-[#ffff00]" />
             {movieDetail.vote_average}
@@ -116,14 +116,14 @@ const DetailCol1 = () => {
         </div>
         <div className="">
           {movieDetail.tagline && (
-            <div className="flex items-start gap-4 mb-10">
+            <div className="flex items-start gap-4 mb-10 md:mb-13">
               <span className="font-bold">Tagline: </span>
               <span className="text-gray-400 italic">
                 {movieDetail.tagline}
               </span>
             </div>
           )}
-          <div className="flex items-end gap-4 mb-10">
+          <div className="flex items-end gap-4 mb-10 md:mb-13">
             <span className="font-bold">Adult: </span>
             {movieDetail.adult === true ? (
               <span className="text-gray-400">YES</span>
@@ -132,13 +132,13 @@ const DetailCol1 = () => {
             )}
           </div>
           {movieDetail.original_language && (
-            <div className="flex items-end gap-4 mb-10">
+            <div className="flex items-end gap-4 mb-10 md:mb-13">
               <span className="font-bold">Language: </span>
               <span className="text-gray-400">{lang}</span>
             </div>
           )}
           {movieDetail.genres && (
-            <div className="flex flex-col gap-4 mb-10">
+            <div className="flex flex-col gap-4 mb-10 md:mb-13">
               <span className="font-bold">Genres: </span>
               <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
                 {movieDetail.genres.map((genre) => (
@@ -153,7 +153,7 @@ const DetailCol1 = () => {
             </div>
           )}
           {movieDetail.production_companies && (
-            <div className="flex flex-col gap-4 mb-10">
+            <div className="flex flex-col gap-4 mb-10 md:mb-13">
               <span className="font-bold">Production Companies: </span>
               <div className="flex flex-wrap gap-x-4 gap-y-3 items-end">
                 {movieDetail.production_companies.map((pc) => (

@@ -18,7 +18,7 @@ const DetailCol2 = () => {
           <div className="font-poppins uppercase text-2xl md:text-3xl font-bold border-l-8 border-l-red-600 pl-2 mb-10">
             Recommended
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-x-5 gap-y-10 md:gap-y-7 grid-">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-x-5 gap-y-11 md:gap-y-7 grid-">
             {recommendedSlice.map((recommend) => (
               <Link to={`/movie/${recommend.id}`} key={recommend.id}>
                 {recommend.backdrop_path ? (

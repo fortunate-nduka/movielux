@@ -105,7 +105,7 @@ const CarouselThumb = ({
               <div className="inline-block w-1 h-1 bg-gray-300 rounded-full mx-4 md:mx-5"></div>
               <span className="capitalize text-[#ffff00]">{lang}</span>
             </div>
-            <div className="leading-6 md:leading-7 md:mt-4 mb-10 text-[13px] sm:text-sm">
+            <div className="leading-6 md:leading-7 md:mt-4 mb-10 text-[12.5px] sm:text-sm">
               {overview.length > 250
                 ? `${overview.substring(0, 200)}...`
                 : overview}
@@ -116,9 +116,9 @@ const CarouselThumb = ({
                   More Information <BsArrowRight className="ml-2 text-sm" />
                 </button>
               </Link>
-              <button className="tracking-wider px-7 py-4 border border-white rounded-full font-semibold flex items-center justify-center ">
+              {/* <button className="tracking-wider px-7 py-4 border border-white rounded-full font-semibold flex items-center justify-center ">
                 Watch Trailer <AiOutlineEye className="ml-2 text-lg" />
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="hidden lg:block lg:w-1/4">
