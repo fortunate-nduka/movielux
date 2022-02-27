@@ -21,7 +21,7 @@ const PersonDetailContainer = ({
 }) => {
   return (
     <div className="pt-16 px-5">
-      <div className="space-y-7 mt-2 pl-1 px-2">
+      <div className="space-y-7 mt-2 pl-1 px-2 text-[13px] md:text-sm">
         {name && (
           <div className="font-bold text-gray-400 ">
             Name: <span className="font-normal text-white">{name}</span>
@@ -62,13 +62,13 @@ const PersonDetailContainer = ({
         {biography && (
           <div className="font-bold flex flex-col gap-y-2 text-gray-400">
             Biography:{" "}
-            <span className="text-white font-normal text-[12px] leading-6 lg:w-[90%]">
+            <span className="text-white font-normal text-[13px] leading-6 lg:w-[90%]">
               {biography}
             </span>
           </div>
         )}
       </div>
-      <div className="lg:hidden">
+      <div className="lg:hidden animate-pulse">
         {profile_path ? (
           <img
             src={imgBase + profile_path}
@@ -113,7 +113,10 @@ const PersonDetail = () => {
           <Link to="/">
             <img src={logo} alt="logo" className="w-7" />
           </Link>
-          <div onClick={() => navigate(-1)} className="cursor-pointer">
+          <div
+            onClick={() => navigate(-1) && setPerson("")}
+            className="cursor-pointer"
+          >
             <FaRegTimesCircle className="text-2xl" />
           </div>
         </div>

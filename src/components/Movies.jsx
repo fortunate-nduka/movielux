@@ -111,12 +111,12 @@ const Movies = () => {
               <img
                 src={imgBase + movie.poster_path}
                 alt=""
-                className="w-[17rem] sm:w-[15rem] rounded-lg"
+                className="w-[18rem] sm:w-[15rem] rounded-lg"
               />
             ) : (
               <img
                 src={no_image}
-                className="w-[17rem] sm:w-[15rem] rounded-lg"
+                className="w-[18rem] sm:w-[15rem] rounded-lg"
                 alt="No Img"
               />
             )}

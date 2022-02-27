@@ -90,16 +90,15 @@ const MovieCredit = () => {
                     className="w-[16rem] shadow-lg rounded-md"
                   />
                 )}
-                <div className="space-y-1 mt-2 pl-1 text-[12px] md:text-xs">
-                  {c.name ||
-                    (c.original_name && (
-                      <div className="font-bold">
-                        Name:{" "}
-                        <span className="text-gray-400 font-normal">
-                          {c.name || c.original_name}
-                        </span>
-                      </div>
-                    ))}
+                <div className="space-y-1 mt-2 pl-1 text-[12.5px] md:text-xs">
+                  {c.name && (
+                    <div className="font-bold">
+                      Name:{" "}
+                      <span className="text-gray-400 font-normal">
+                        {c.name || c.original_name}
+                      </span>
+                    </div>
+                  )}
                   {c.character && (
                     <div className="font-bold pt-1">
                       Character:{" "}
@@ -152,16 +151,15 @@ const MovieCredit = () => {
                     className="w-[16rem] shadow-lg rounded-md"
                   />
                 )}
-                <div className="space-y-1 mt-2 pl-1 text-[12px] md:text-xs">
-                  {c.name ||
-                    (c.original_name && (
-                      <div className="font-bold">
-                        Name:{" "}
-                        <span className="text-gray-400 font-normal">
-                          {c.name || c.original_name}
-                        </span>
-                      </div>
-                    ))}
+                <div className="space-y-1 mt-2 pl-1 text-[12.5px] md:text-xs">
+                  {c.name && (
+                    <div className="font-bold">
+                      Name:{" "}
+                      <span className="text-gray-400 font-normal">
+                        {c.name || c.original_name}
+                      </span>
+                    </div>
+                  )}
                   {c.known_for_department && (
                     <div className="font-bold pt-1">
                       Department:{" "}
