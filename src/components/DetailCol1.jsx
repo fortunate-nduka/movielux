@@ -51,6 +51,9 @@ const DetailCol1 = () => {
     case "it":
       lang = "Italian";
       break;
+    case "tr":
+      lang = "Turkish";
+      break;
     default:
       lang = movieDetail.original_language;
       break;

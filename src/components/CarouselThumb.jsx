@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Moment from "react-moment";
-import { AiFillStar, AiOutlineEye } from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai";
 import { FaThumbsUp } from "react-icons/fa";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import millify from "millify";
@@ -61,6 +61,9 @@ const CarouselThumb = ({
       break;
     case "it":
       lang = "Italian";
+      break;
+      case "tr":
+      lang = "Turkish";
       break;
     default:
       lang = original_language;
