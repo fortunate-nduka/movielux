@@ -4,11 +4,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montBlack: ["montBlack", "sans-serif"],
-        montHeavy: ["montHeavy", "sans-serif"],
-        montBold: ["montBold", "sans-serif"],
-        montRegular: ["montRegular", "sans-serif"],
-        montLight: ["montLight", "sans-serif"],
         poppins: ["poppins", "sans-serif"],
       },
       colors: {

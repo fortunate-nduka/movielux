@@ -10,7 +10,6 @@ import { imgBase, searchUrl } from "../utils/requests";
 import Moment from "react-moment";
 import { AiFillStar } from "react-icons/ai";
 import logo from "../assets/logo.png";
-import Footer from "./Footer";
 
 const Search = () => {
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ const Search = () => {
     setSearchedMovies,
   } = useContext(DataContext);
   const style = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,9)),url(${movieBg})`,
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,8)),url(${movieBg})`,
   };
 
   const fetchSearch = async () => {
@@ -44,7 +43,7 @@ const Search = () => {
   return (
     <div
       style={style}
-      className="bg-cover bg-no-repeat bg-center bg-fixed w-full h-auto  min-h-screen"
+      className="bg-cover bg-no-repeat bg-center bg-fixed w-full min-h-screen"
     >
       <header className="bg-[rgba(0,0,0,.6)] py-6 px-5 flex items-center shadow-lg relative z-20">
         <div className="container mx-auto flex items-center justify-between">
@@ -105,8 +104,6 @@ const Search = () => {
               </div>
             </Link>
           ))}
-
-          <Footer />
         </div>
       </div>
     </div>

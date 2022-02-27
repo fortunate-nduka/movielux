@@ -101,7 +101,7 @@ const MovieCredit = () => {
                       </div>
                     ))}
                   {c.character && (
-                    <div className="font-bold">
+                    <div className="font-bold pt-1">
                       Character:{" "}
                       <span className="text-gray-400 font-normal">
                         {c.character}
@@ -163,7 +163,7 @@ const MovieCredit = () => {
                       </div>
                     ))}
                   {c.known_for_department && (
-                    <div className="font-bold">
+                    <div className="font-bold pt-1">
                       Department:{" "}
                       <span className="text-gray-400 font-normal">
                         {c.known_for_department}

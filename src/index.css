@@ -2,34 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "montBlack";
-  src: url("./assets/fonts/Mont-Black.ttf");
-}
-@font-face {
-  font-family: "montBlack";
-  src: url("./assets/fonts/Mont-Black.ttf");
-}
-@font-face {
-  font-family: "montBold";
-  src: url("./assets/fonts/Mont-Bold.ttf");
-}
-@font-face {
-  font-family: "montHeavy";
-  src: url("./assets/fonts/Mont-Heavy.ttf");
-}
-@font-face {
-  font-family: "montRegular";
-  src: url("./assets/fonts/Mont-Regular.ttf");
-}
-@font-face {
-  font-family: "montLight";
-  src: url("./assets/fonts/Mont-Light.ttf");
-}
-
 @layer base {
   body {
-    @apply font-montRegular tracking-wider bg-black text-white text-xs sm:text-sm;
+    @apply font-poppins tracking-wider bg-black text-white text-[12px] sm:text-sm;
   }
 
   .letter {

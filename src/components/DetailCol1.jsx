@@ -103,7 +103,7 @@ const DetailCol1 = () => {
         )}
       </div>
       <div className="mt-10 px-4">
-        <div className="font-poppins font-black text-2xl md:text-3xl mb-6">
+        <div className="font-poppins font-black text-2xl md:text-3xl lg:text-4xl mb-6">
           {movieDetail.title || movieDetail.name}
         </div>
         <div className="flex items-center justify-between sm:justify-start sm:gap-x-8 mb-8">
@@ -173,7 +173,7 @@ const DetailCol1 = () => {
       {movieDetail.overview && (
         <div className="flex flex-col gap-1 mb-9 w-full px-4">
           <span className="font-bold block">Description: </span>
-          <span className="text-gray-400 leading-6 text-[13px] sm:text-sm">
+          <span className="text-gray-400 leading-7 text-[13px] sm:text-sm">
             {movieDetail.overview}
           </span>
         </div>

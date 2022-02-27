@@ -125,13 +125,13 @@ const CarouselThumb = ({
             {poster_path ? (
               <img
                 src={`${imgBase + poster_path}`}
-                className="rounded-lg mx-auto shadow-lg w-11/12"
+                className="rounded-lg mx-auto shadow-lg w-[93%]"
                 alt="movie poster"
               />
             ) : (
               <img
                 src={no_image}
-                className="rounded-lg mx-auto shadow-lg w-11/12"
+                className="rounded-lg mx-auto shadow-lg w-[93%]"
                 alt=""
               />
             )}
