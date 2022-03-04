@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { baseUrl, endUrl } from "../utils/requests";
 import axios from "axios";
 import { DetailCol1, DetailCol2, Header, Loader } from "./index";
-import Footer from "./Footer";
 
 const MovieDetail = () => {
   const {
@@ -56,11 +55,10 @@ const MovieDetail = () => {
   ) : (
     <div className="min-h-screen">
       <Header />
-      <div className="relative container mx-auto flex flex-col lg:flex-row lg:justify-between pt-5">
+      <div className="relative container mx-auto flex flex-col lg:flex-row lg:justify-between pt-5 pb-14">
         <DetailCol1 />
         <DetailCol2 />
       </div>
-      <Footer />
     </div>
   );
 };

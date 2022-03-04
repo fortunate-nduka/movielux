@@ -6,7 +6,6 @@ import logo from "../assets/logo.png";
 import no_image from "../assets/no_image.jpg";
 import DataContext from "../context/DataContext";
 import { baseUrl, endUrl, imgBase } from "../utils/requests";
-import { Footer } from "./index";
 
 const PersonDetailContainer = ({
   profile_path,
@@ -110,7 +109,7 @@ const PersonDetail = () => {
   }, [id]);
 
   return (
-    <div className="">
+    <div className="pb-14">
       <header className="bg-[rgba(0,0,0,.6)] py-6 px-5 flex items-center shadow-lg relative z-20">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/">
@@ -127,7 +126,6 @@ const PersonDetail = () => {
       <div className="px-0 sm:px-4 mx-auto md:w-[90%] lg:w-[95%] xl:w-[80%] 2xl:w-[70%] min-h-[75vh]">
         <PersonDetailContainer {...person} />
       </div>
-      <Footer />
     </div>
   );
 };

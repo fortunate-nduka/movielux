@@ -7,7 +7,6 @@ import { PageControl, Loader } from "./index";
 import axios from "axios";
 import no_image from "../assets/no_image.jpg";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
 
 const Movies = () => {
   const { movies, setMovies, loading, setLoading, page, genre } =
@@ -97,7 +96,7 @@ const Movies = () => {
     <Loader />
   ) : (
     <Fragment>
-      <div className="font-poppins uppercase text-xl sm:text-2xl font-bold border-l-8 border-l-red-600 pl-4 mt-10 mb-12">
+      <div className="font-poppins uppercase text-xl sm:text-2xl font-bold border-l-8 border-l-red-600 pl-4 mt-10 mb-6">
         {genreName}
       </div>
       <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-16 px-5">
@@ -138,7 +137,6 @@ const Movies = () => {
         ))}
       </div>
       <PageControl />
-      <Footer />
     </Fragment>
   );
 };
