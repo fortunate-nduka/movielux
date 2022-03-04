@@ -67,7 +67,7 @@ const DetailCol1 = () => {
   };
 
   return (
-    <div className="lg:w-[60%] md:mt-10">
+    <div className="lg:w-[60%] lg:mt-5">
       <div className="relative px-4">
         {movieDetail.videos && (
           <>

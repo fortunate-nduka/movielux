@@ -6,7 +6,7 @@ import logo from "../assets/logo.png";
 import no_image from "../assets/no_image.jpg";
 import DataContext from "../context/DataContext";
 import { baseUrl, endUrl, imgBase } from "../utils/requests";
-import Footer from "./Footer";
+import { Footer } from "./index";
 
 const PersonDetailContainer = ({
   profile_path,
@@ -76,7 +76,11 @@ const PersonDetailContainer = ({
             className="w-[18rem] md:w-[20rem] mx-auto rounded-md shadow-2xl mt-16"
           />
         ) : (
-          <img src={no_image} alt="" />
+          <img
+            src={no_image}
+            className="w-[18rem] md:w-[20rem] mx-auto rounded-md shadow-2xl mt-16"
+            alt=""
+          />
         )}
       </div>
     </div>
@@ -93,7 +97,6 @@ const PersonDetail = () => {
       setLoading(true);
       const personDetailRes = await axios(`${baseUrl}/person/${id}?${endUrl}`);
       setPerson(personDetailRes.data);
-      console.log(personDetailRes.data);
     } catch (err) {
       console.log(err.message);
     } finally {

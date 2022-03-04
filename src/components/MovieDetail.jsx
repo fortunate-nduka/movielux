@@ -35,7 +35,6 @@ const MovieDetail = () => {
         `${baseUrl}/movie/${id}/credits?${endUrl}`
       );
       setMovieDetail(movieDetailRes.data);
-      console.log(movieDetailRes.data);
       setRecommended(recommended.data.results);
       setSimilar(similar.data.results);
       setCrew(movieCredit.data.crew);
