@@ -18,7 +18,7 @@ const PersonDetailContainer = ({
   popularity,
   biography,
 }) => {
-  return (
+  return(
     <div className="pt-16 px-5">
       <div className="space-y-7 mt-2 pl-1 px-2 text-[13px] md:text-sm">
         {name && (
@@ -87,7 +87,7 @@ const PersonDetailContainer = ({
 };
 
 const PersonDetail = () => {
-  const { setLoading, person, setPerson } = useContext(DataContext);
+  const {setLoading, person, setPerson } = useContext(DataContext);
   const navigate = useNavigate();
   const { id } = useParams();
 

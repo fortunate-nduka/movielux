@@ -96,7 +96,7 @@ const Movies = () => {
     <Loader />
   ) : (
     <Fragment>
-      <div className="font-poppins uppercase text-xl sm:text-2xl font-bold border-l-8 border-l-red-600 pl-4 mt-10 mb-6">
+      <div className="font-poppins uppercase text-xl sm:text-2xl font-bold border-l-8 border-l-red-600 pl-4 mt-10">
         {genreName}
       </div>
       <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-16 px-5">

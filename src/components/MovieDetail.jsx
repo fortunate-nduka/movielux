@@ -55,7 +55,7 @@ const MovieDetail = () => {
   ) : (
     <div className="min-h-screen">
       <Header />
-      <div className="relative container mx-auto flex flex-col lg:flex-row lg:justify-between pt-5 pb-14">
+      <div className="relative container mx-auto flex flex-col lg:flex-row lg:justify-between pt-5 pb-20">
         <DetailCol1 />
         <DetailCol2 />
       </div>
