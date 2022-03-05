@@ -21,7 +21,7 @@ const Search = () => {
     setSearchedMovies,
   } = useContext(DataContext);
   const style = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,8)),url(${movieBg})`,
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,7)),url(${movieBg})`,
   };
 
   const fetchSearch = async () => {
