@@ -55,7 +55,7 @@ const Search = () => {
           </div>
         </div>
       </header>
-      <div className="px-6">
+      <div className="px-6 pb-20">
         <form className="w-full sm:w-[90%] lg:w-[80%] mx-auto pt-6 flex items-center relative">
           <BsSearch className="text-base absolute left-4 md:left-6 z-10 text-black" />
           <input
